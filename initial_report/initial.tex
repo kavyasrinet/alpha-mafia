@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+
+\usepackage[compact]{titlesec} 
+\usepackage{titling}
+
+\posttitle{\par\end{center}\vskip 0.5em}
+\posttitle{\par\end{center}}
+\setlength{\droptitle}{-10pt}
+
+\oddsidemargin0cm
+\topmargin-2cm     
+\textwidth16.5cm   
+\textheight23.5cm  
+
+
+\title{NLP Initial Project Plan}
+\date{\today}
+\author{Aditya Gabbita, Evan Palmer, Kavya Srinet}
+\begin{document}
+
+\maketitle
+
+\section{Architecture}
+
+We will have three core modules for parsing, question generating, and question answering. 
+
+\subsection{Parser}
+
+The parser will take as input the plain HTML file, and will strip the HTML using a library such as python's \emph{Beautifulsoup}. The parser will then tokanize the plain text, perform part of speech tagging, and recognize named entities. The \emph{NLTK} module for python will provide libraries for this functionality. In general, the parser will be responsable for transforming the document into a format which our question generation and answering modules will be able to use easily. It seems likely that the parser will end up encapsulating the document, and providing information upon request.
+
+\subsection{Question Generation}
+
+This module will take a transformed document and an integer N. It will then produce many questions regarding the document. We will then take our list of questions and assign each question a rating. We will return the N highest rated questions.
+
+
+One approach would use several fact templates seen frequently in grammatically correct sentences, each with a corresponding question template. We can scan our document's setences with the fact templates in order to find matches. These matches could then be rearranged according to the question template to form fluent questions. The subject of these questions could be limited to the list of important subjects, which we have identified from named entity recognition. In short, these would be questions generated from re-arranging simple sentences, and removing the subject or object.
+
+
+\subsection{Question Answering}
+
+Our quesiton answering module will take a document transformed by the parser and a question. It will the attempt to answer the question using the transformed document.
+
+\subsubsection{Question Analysis}
+
+In order to answer questions, we will first need to understand something about what is being asked. In this sub-module, we will try to analyze the type of question we are given, to determine the type of answer that is expected e.g. Yes/No question, Who/What/Where/When/Why question. Once we analyze the question type, we will be able to map it to the class of answer required e.g. True/False or a location, person, time, date or description.
+
+\subsubsection{Answering The Question}
+
+Once we have an idea of what type of answer we are looking for, we can attempt to find passages in the document which relate to the question, and extract an appropriate answer.
+
+\section{First Steps}
+
+
+As a first step, we would like to get a simple version of each of our core modules working. We would like a simple parsing module, a simple question generating module, and a simple question answering module. Creating these simple modules will allow us to see which parts of the problem are hard, and will require more work, and which can be solved trivially. 
+
+\subsection{A Simple Parser}
+
+A simple parser might include a only functionality for translating HTML into plain text, or it might include HTML translation and the use of a library to generate parse trees from the parsed HTML
+
+\subsection{A Simple Question Answering Module}
+
+Our simple question answering system will focus on answering only the easy and medium question types. It will be able to do simple string matching, and perhaps determine whether or not a question is a True/False question. We will likely search for important words in the question in the document, and choose a closely matching sentence as the answer. Here important could be defined as a word with a high TF-IDF.
+
+\subsection{A Simple Question Generating Module}
+
+Our simple question generation module, will use a few predefined question templates, and will attempt to match these templates to phrases in the document. Once a match is found, we wil perform some transformation to the phrase to turn it into a question. We will randomly select N questions from our generated questions
+
+
+\section{Next Steps}
+
+Once we have a simple system working, we will evaluate the performance using sample wikipedia articles. This will allow us to determine which aspects of our system demand the most attention. From here, we will work iteratively resolving issues based on the performance of our program on various samples. 
+%This sentence is vague, and bad. I apoligize.
+
+\section{Work Division and Code Sharing}
+
+We have set up a private repository on github, and will use this to share code. For documents too large to fit on github, we intend to use dropbox. We will also have weekly or bi-weekly meetings to keep everyone up to date.
+
+% I completely made this up, and do not care how we divide the work.
+
+Initially we will work together to determine the exact specifications of our simple system. Once this is complete, we will each implement a component of our system. Once the initial system is complete, we will evaulate our progress, and decide on how to proceed with research and implementation.
+
+\section{Tools}
+
+We have identified several libraries which may be useful for our project.
+
+\begin{enumerate}
+\item NLTK - Description of NLTK 
+\item Beautifulsoup - A Python HTML parsing library
+\item BART - Pronoun resolution
+\end{enumerate}
+
+\end{document}
