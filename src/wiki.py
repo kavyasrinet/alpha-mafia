@@ -42,7 +42,9 @@ content = crux.content
 #question = "Which constellation borders the Crux on east, north and west ?"
 #question = "Is the Crux easily visible from the Northern Hemisphere throughout the year ?"
 #question = "Is Santiago the capital of Chile ?"
-question  = "Has the air pollution in Santiago reduced in 2010 ?"
+#question  = "Has the air pollution in Santiago reduced in 2010 ?"
+#question = "Are the eastern communes in Santiago richer than the western communes ?"
+question = "What is the name of Santiago's public bus transport system ?"
 #text = nltk.sent_tokenize(content.split("\n"))
 
 
@@ -66,10 +68,10 @@ for line in text:
 			list_w[k] +=1
 	map_s.append(list_w)
 
-transformer = TfidfTransformer()
+transformer = TfidfTransformer(norm = None, sublinear_tf = True)
 tfidf = transformer.fit_transform(map_s)
 
-#print tfidf.toarray()
+print tfidf.toarray()
 
 arr = tfidf.toarray()
 max_r = -1
@@ -85,9 +87,5 @@ for l in arr:
 		print text[ind]
 	ind = ind +1
 
-
-			
-
-
-
+print max_r
 # 	print nltk.pos_tag(text)
