@@ -1,7 +1,7 @@
 import wikipedia
 import nltk
 import urllib
-import codecs
+import codecs,sys
 from bs4 import BeautifulSoup
 import os
 from nltk.parse import stanford
@@ -26,7 +26,7 @@ os.environ['STANFORD_MODELS'] = STANFORD_JARS_FOLDER
 # ny = wikipedia.page('New York')
 # print ny.content
 
-crux = wikipedia.page("Santiago")
+crux = wikipedia.page("Violin")
 # print crux.title + "\n"
 # print crux.url + "\n"
 #print crux.content + "\n"	
@@ -44,7 +44,8 @@ content = crux.content
 #question = "Is Santiago the capital of Chile ?"
 #question  = "Has the air pollution in Santiago reduced in 2010 ?"
 #question = "Are the eastern communes in Santiago richer than the western communes ?"
-question = "What is the name of Santiago's public bus transport system ?"
+#question = "What is the name of Santiago's public bus transport system ?"
+question = "Who made the instrument known as Lady Blunt ?"
 #text = nltk.sent_tokenize(content.split("\n"))
 
 
@@ -71,7 +72,7 @@ for line in text:
 transformer = TfidfTransformer(norm = None, sublinear_tf = True)
 tfidf = transformer.fit_transform(map_s)
 
-print tfidf.toarray()
+#print tfidf.toarray()
 
 arr = tfidf.toarray()
 max_r = -1
@@ -87,5 +88,5 @@ for l in arr:
 		print text[ind]
 	ind = ind +1
 
-print max_r
+#print max_r
 # 	print nltk.pos_tag(text)
