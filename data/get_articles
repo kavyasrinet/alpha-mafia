@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sites=( 'cities' 'constellations' 'languages' 'music_instruments' )
+for site in "${sites[@]}"; do
+    for ((i = 1; i<=10; i++)); do
+        wget "https://www.ark.cs.cmu.edu/NLP/S15/student_generated_data/concise_html/${site}/a${i}.htm" -O "${site}${i}"
+    done
+done
