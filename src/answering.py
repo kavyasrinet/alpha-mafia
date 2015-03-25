@@ -66,5 +66,4 @@ def answer(article, question):
 
 	return [sentences[index] for index in row_indexes];
 
-
 print answer(content, question)
