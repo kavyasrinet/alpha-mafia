@@ -11,7 +11,7 @@ import os.path
 import codecs
 from subprocess import Popen, PIPE
 
-phrases = ["is"]
+phrases = ["is", "was", "are", "were"]
 def contains_phrase(sentence):
     for phrase in phrases:
         if phrase in nltk.word_tokenize(sentence):
@@ -34,6 +34,7 @@ ny = cached_page('New York')
 
 sentences = nltk.sent_tokenize(ny.strip())
 soi = [sentence for sentence in sentences if contains_phrase(sentence)]
+soi = sorted(soi, key=lambda x: len(x))
 
 def stanford_parser():
     STANFORD_JARS_FOLDER = '../dependencies/stanford-parser'
@@ -41,16 +42,14 @@ def stanford_parser():
     os.environ['STANFORD_MODELS'] = STANFORD_JARS_FOLDER
     return stanford.StanfordParser()
 
-pattern = '__ < (NP $. (VP <, (VBZ|VB < is|are|was|were)))'
+pattern = '__ < (NP $. (VP <, (VBZ|VBD|VBP|VB < is|are|was|were)))'
 
 parser = stanford_parser()
 for sentence in soi:
-    #print sentence
     p = parser.raw_parse_sents([sentence])[0]
     with open(os.devnull, 'wb') as devnull:
         tregex = Popen(['../dependencies/stanford-tregex/tregex.sh', pattern ,'-filter'], stdout=PIPE, stdin=PIPE, stderr=devnull)
     out = tregex.communicate(str(p))
-    #print out[0]
     try:
         tree = nltk.Tree.fromstring(out[0])
         while tree[0].label() != 'NP':
