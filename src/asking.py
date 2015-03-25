@@ -38,21 +38,23 @@ def get_np_vp(tree):
 
 pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None}
 det_map = {"this": "what","that":"which","these":"which"}
+pronouns = ["it","he","she","they"]
+dets = ["this","that","these"]
 
 def to_question(subj, verb, verb_object):
-    pronouns = ["it","he","she","they"]
-    dets = ["this","that","these"]
     split = subj.lower().split()
     first_word = split[0]
+    #if the subject is only a pronoun, ask a question
     if first_word in pronouns and len(split) == 1:
         question = pronoun_map[first_word]
         if question:
             return "%s %s %s?" % (question.capitalize(), verb, verb_object)
         return None
+    #replace specific determiners as first words, to create questions
     if first_word in dets:
         question = det_map[first_word] + ' '.join(split[1:]).capitalize()
         return "%s %s %s?" % (question.capitalize(), verb, verb_object)
-
+    #if no pronouns and determiners, ask regular question
     pronoun = next((pronoun in subj.lower() for pronoun in pronouns),None)
     det = next((det in subj.lower() for det in dets),None)
     if not det and not pronoun:
@@ -72,19 +74,21 @@ for sentence in ranked:
     #call tregex
     pattern = '__ < (NP $. (VP <, (VBZ|VBD|VBP|VB <, is|are|was|were)))'
     output = stanford.tregex(str(parse), pattern, [])
-    #no error checking #yolo
+    #try to get the tree
     tree = None
     try:
         tree = nltk.Tree.fromstring(output[0])
     except:
         continue
+    #split into verb phrase and noun phrase
     np, vp = get_np_vp(tree)
     if not np:
         continue
+    #get subject verb and object
     subj = ' '.join(np.leaves())
     verb = vp.leaves()[0]
     verb_object = ' '.join(vp.leaves()[1:])
-
+    #construct question
     question = to_question(subj, verb, verb_object)
     if question:
         print question
