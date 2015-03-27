@@ -1,22 +1,14 @@
-import wikipedia
+#!/usr/bin/env python
 import nltk
 import codecs, sys
-import os.path
-import stanford
-
-#prevents from downloading from the internet every time. I have bad internet
-def cached_page(page_name):
-    text = None
-    page = page_name.replace(' ','').lower()
-    if os.path.isfile(page + '.cache'):
-        return codecs.open(page + '.cache', encoding='utf-8').read().encode('ascii','replace')
-    else:
-        ny = wikipedia.page(page_name)
-        with open(page + '.cache','w') as outfile:
-            outfile.write(ny.content.encode('utf8'))
-        return ny.content
+import common.stanford as stanford
 
 phrases = ["is", "was", "are", "were"]
+pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None}
+det_map = {"this": "what","that":"which","these":"which"}
+pronouns = ["it","he","she","they"]
+dets = ["this","that","these"]
+
 def contains_phrase(sentence):
     for phrase in phrases:
         if phrase in nltk.word_tokenize(sentence):
@@ -35,11 +27,6 @@ def get_np_vp(tree):
     if idx >= 0 and idx < len(tree) - 1:
         return tree[idx], tree[idx+1]
     return None, None
-
-pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None}
-det_map = {"this": "what","that":"which","these":"which"}
-pronouns = ["it","he","she","they"]
-dets = ["this","that","these"]
 
 def to_question(subj, verb, verb_object):
     split = subj.lower().split()
@@ -61,34 +48,44 @@ def to_question(subj, verb, verb_object):
         return "%s %s %s?" % (verb.capitalize(), subj, verb_object)
     return None
 
-ny = cached_page('New York')
-sentences = filterd_sentences(ny)
-ranked = ranked_sentences(sentences)
+def get_questions(article, nquestions, debug=False):
+    sentences = filterd_sentences(article)
+    ranked = ranked_sentences(sentences)
 
+    parser = stanford.Parser()
 
+    questions = []
+    for sentence in ranked:
+        parse = parser.raw_parse_sents([sentence]).next().next()
+        #call tregex
+        pattern = '__ < (NP $. (VP <, (VBZ|VBD|VBP|VB <, is|are|was|were)))'
+        output = stanford.tregex(str(parse), pattern, [])
+        #try to get the tree
+        tree = None
+        try:
+            tree = nltk.Tree.fromstring(output[0])
+        except:
+            continue
+        #split into verb phrase and noun phrase
+        np, vp = get_np_vp(tree)
+        if not np:
+            continue
+        #get subject verb and object
+        subj = ' '.join(np.leaves())
+        verb = vp.leaves()[0]
+        verb_object = ' '.join(vp.leaves()[1:])
+        #construct question
+        question = to_question(subj, verb, verb_object)
+        if not question:
+            continue
+        #append if legit    
+        if debug:
+            print question
+        questions.append(question)
+        if len(questions) == nquestions:
+            return questions
+    return questions
 
-parser = stanford.Parser()
-
-for sentence in ranked:
-    parse = parser.raw_parse_sents([sentence]).next().next()
-    #call tregex
-    pattern = '__ < (NP $. (VP <, (VBZ|VBD|VBP|VB <, is|are|was|were)))'
-    output = stanford.tregex(str(parse), pattern, [])
-    #try to get the tree
-    tree = None
-    try:
-        tree = nltk.Tree.fromstring(output[0])
-    except:
-        continue
-    #split into verb phrase and noun phrase
-    np, vp = get_np_vp(tree)
-    if not np:
-        continue
-    #get subject verb and object
-    subj = ' '.join(np.leaves())
-    verb = vp.leaves()[0]
-    verb_object = ' '.join(vp.leaves()[1:])
-    #construct question
-    question = to_question(subj, verb, verb_object)
-    if question:
-        print question
+if __name__ == '__main__':
+    #unit testing
+    pass
