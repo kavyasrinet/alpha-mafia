@@ -1,0 +1,2 @@
+stanford parser version 3.4
+stanford tregex version 3.4
