@@ -1,0 +1,1 @@
+1. If the question text contains pronouns, try resolving the pronouns. Or remove the question from the list. (Task Responsibility: Aditya)
