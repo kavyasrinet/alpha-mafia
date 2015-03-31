@@ -48,10 +48,7 @@ def to_question(subj, verb, verb_object):
         return "%s %s %s?" % (verb.capitalize(), subj, verb_object)
     return None
 
-def get_questions(article, nquestions, debug=False):
-    sentences = filterd_sentences(article)
-    ranked = ranked_sentences(sentences)
-
+def question_parts(ranked, nquestions, debug=False):
     parser = stanford.Parser()
 
     questions = []

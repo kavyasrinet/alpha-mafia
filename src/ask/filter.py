@@ -64,7 +64,7 @@ def get_continuous_chunks(text):
     return continuous_chunk
 
 #filter sentences for linking verbs, named entities etc.
-def filtered_sentences(article):
+def filtered_sentences(article, debug=False):
     sentences = nltk.sent_tokenize(article.strip())
 
     #check for linking verbs
