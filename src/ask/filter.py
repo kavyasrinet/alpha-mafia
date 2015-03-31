@@ -10,25 +10,25 @@ verbs = ["are", "has", "have", "is", "should", "was", "will", "would", "were"]
 
 #linking verbs of length == 2 words
 verb_phrases = [["are", "being"], ["had", "been"], ["has", "been"],
-["have", "been"], ["is", "being"], ["should", "be"]], ["was", "being"],
+["have", "been"], ["is", "being"], ["should", "be"], ["was", "being"],
 ["will", "be"], ["would", "be"], ["were", "being"]]
 
 #checks if linking verbs are present
 def contains_phrase(sentence):
-	word_tokens = nltk.word_tokenize(sentence)
+    word_tokens = nltk.word_tokenize(sentence)
 
     #return true if the single word exists
     for verb in verbs:
         if verb in word_tokens:
             return True
-    
+
     #return true if words occur in succession
     for verb_phrase in verb_phrases:
-    	indices = [i for i, word in enumerate(word_tokens) if word == verb_phrase[0]]
-    	
+        indices = [i for i, word in enumerate(word_tokens) if word == verb_phrase[0]]
+
     	for index in indices:
-    		if ((index != (len(word_tokens)-1)) and (word_tokens[index+1] == verb_phrase[1])):
-    			return True
+    	    if ((index != (len(word_tokens)-1)) and (word_tokens[index+1] == verb_phrase[1])):
+    		return True
 
     return False
 
@@ -39,9 +39,8 @@ def contains_noun(sentence):
 
 	#check if POS is a noun
 	for word in pos:
-		if('NN' in word[1]):
-			return True
-
+	    if('NN' in word[1]):
+		return True
 	return False
 
 #returns continuous chunks of Named Entities
@@ -65,9 +64,9 @@ def get_continuous_chunks(text):
     return continuous_chunk
 
 #filter sentences for linking verbs, named entities etc.
-def filterd_sentences(article):
+def filtered_sentences(article):
     sentences = nltk.sent_tokenize(article.strip())
-    
+
     #check for linking verbs
     sentences = [sentence for sentence in sentences if contains_phrase(sentence)]
 
@@ -75,6 +74,6 @@ def filterd_sentences(article):
     sentences = [sentence for sentence in sentences if contains_noun(sentence)]
 
     #sort by no. of named entities
-    sentences = sort(sentences, key = lambda x : len(get_continuous_chunks(x)))
+    sentences = sorted(sentences, key = lambda x : -len(get_continuous_chunks(x)))
 
     return sentences
