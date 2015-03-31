@@ -40,5 +40,7 @@ def question_part(sentence):
     return (subj, verb, verb_object)
 
 if __name__ == '__main__':
+    question = "HARDCODED QUESTION"
+    print question_part(question)
     #unit testing
     pass
