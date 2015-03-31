@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import nltk
-import codecs, sys
 import common.stanford as stanford
-
+from multiprocessing import Pool
+import settings
 parser = stanford.Parser()
 
 def get_np_vp(tree):
@@ -12,10 +12,9 @@ def get_np_vp(tree):
     return None, None
 
 def question_parts(ranked, debug=False):
-    for sentence in ranked:
-        parts = question_part(sentence)
-        if not parts: continue
-        yield parts
+    pool = Pool(settings.NUM_CORES)
+    for parts in pool.imap(question_part, ranked):
+        if parts: yield parts
 
 def question_part(sentence):
     parse = parser.raw_parse_sents([sentence]).next().next()

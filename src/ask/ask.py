@@ -13,9 +13,10 @@ def get_questions(article, nquestions, debug=False):
     for parts in question_parts(sentences, debug):
         question = gen_question(parts)
         if not question: continue
-        print question
+        if debug: print question
         questions.append(question)
     ranked = rank_questions(questions)
+    if debug: print "### ranked ###"
     return ranked[0:nquestions]
 
 if __name__ == '__main__':

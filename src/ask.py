@@ -29,7 +29,7 @@ def main():
         print "Could not convert " +sys.argv[2] + "to integer"
         return
     article = get_article(article_html)
-    questions = get_questions(article, nquestions)
+    questions = get_questions(article, nquestions, debug=True)
     for question in questions:
         print question
 
