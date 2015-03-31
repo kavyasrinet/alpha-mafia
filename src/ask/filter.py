@@ -73,6 +73,9 @@ def filtered_sentences(article, debug=False):
     #check for nouns
     sentences = [sentence for sentence in sentences if contains_noun(sentence)]
 
+    #remove sentences which are very large
+    sentences = [sentence for sentence in sentences if (len(nltk.word_tokenize(sentence)) < 15)]
+
     #sort by no. of named entities
     sentences = sorted(sentences, key = lambda x : -len(get_continuous_chunks(x)))
 
