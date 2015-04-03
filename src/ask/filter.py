@@ -65,11 +65,8 @@ def filtered_sentences(article, debug=False):
     #tokenize all of the sentences
     sentences = [(nltk.word_tokenize(sentence), sentence) for sentence in sentences]
     #throw out sentences with no linking verb
-    print len(sentences)
     sentences = filter(short_enough, sentences)
-    print len(sentences)
     sentences = filter(contains_linking, sentences)
-    print len(sentences)
     #pos tag the remaining sentences
     sentences = [sentence_to_features(sentence) for sentence in sentences]
     filter(good_enough, sentences)

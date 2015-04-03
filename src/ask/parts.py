@@ -3,6 +3,7 @@ import nltk
 import common.stanford as stanford
 from multiprocessing import Pool
 import settings
+from filter import contains_linking
 import re
 
 parser = stanford.Parser()
@@ -61,8 +62,12 @@ def get_parts(np, vp, sentence, verb_length):
         return subject, verb, verb_object
     return None
 
+def get_verb(sentence):
+    return contains_linking(nltk.word_tokenize(sentence))
+
 #should make sure things work
 def question_part(sentence):
+    verb = get_verb(sentence)
     parse = parser.raw_parse_sents([sentence]).next().next()
     #call tregex
     pattern = 'NP $. (VP <, (VBZ|VBD|VBP|VB <, is|are|was|were))'
