@@ -31,7 +31,7 @@ def main():
     article = get_article(article_html)
     questions = get_questions(article, nquestions, debug=True)
     for question in questions:
-        print question
+        print question.encode('utf-8')
 
 if __name__ == '__main__':
     main()

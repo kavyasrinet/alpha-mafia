@@ -31,7 +31,7 @@ def main():
     questions = questions.splitlines()
     answers = answer_all(article, questions)
     for answer in answers:
-        print answer
+        print answer.encode('utf-8')
 
 if __name__ == '__main__':
     main()
