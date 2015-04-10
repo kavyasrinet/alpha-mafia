@@ -4,79 +4,94 @@ import codecs, sys
 import common.stanford as stanford
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
+import re
 
+MAX_LENGTH = 20
 #linking verbs
-verbs = ["are", "has", "have", "is", "should", "was", "will", "would", "were"]
+verbs = [["are"], ["have"], ["is"], ["should"], ["was"], ["would"], ["were"]]
 
 #linking verbs of length == 2 words
 verb_phrases = [["are", "being"], ["had", "been"], ["has", "been"],
 ["have", "been"], ["is", "being"], ["should", "be"], ["was", "being"],
 ["will", "be"], ["would", "be"], ["were", "being"]]
 
+def short_enough(sentence):
+    return len(sentence[0]) < MAX_LENGTH
+
+def is_sublist(lst, sublst):
+    n = len(sublst)
+    return any((sublst == lst[i:i+n]) for i in xrange(len(lst)-n+1))
+
 #checks if linking verbs are present
-def contains_phrase(sentence):
-    word_tokens = nltk.word_tokenize(sentence)
-
-    #return true if the single word exists
+def contains_linking(sentence):
     for verb in verbs:
-        if verb in word_tokens:
-            return True
-
-    #return true if words occur in succession
+        if is_sublist(sentence[0], verb):
+            return verb
     for verb_phrase in verb_phrases:
-        indices = [i for i, word in enumerate(word_tokens) if word == verb_phrase[0]]
+        if is_sublist(sentence[0], verb_phrase):
+            return verb_phrase
+    return []
 
-    	for index in indices:
-    	    if ((index != (len(word_tokens)-1)) and (word_tokens[index+1] == verb_phrase[1])):
-    		return True
 
-    return False
+def sentence_to_features(sentence):
+    tags = nltk.pos_tag(sentence[0])
+    nouns, pronouns = nouns_and_pronouns(tags)
+    named_entities = named_entity_count(tags)
+    return ((pronouns, nouns, named_entities),sentence[1])
 
 #checks if the sentence has a noun
-def contains_noun(sentence):
-	word_tokens = nltk.word_tokenize(sentence)
-	pos = nltk.pos_tag(word_tokens)
+def nouns_and_pronouns(sentence):
+    nn = re.compile('NN.*')
+    pp = re.compile('PRP.*')
+    nn_count = len(filter(nn.match, sentence[0]))
+    pp_count = len(filter(pp.match, sentence[0]))
+    return nn_count, pp_count
 
-	#check if POS is a noun
-	for word in pos:
-	    if('NN' in word[1]):
-		return True
-	return False
+def named_entity_count(sentence):
+    return len(ne_chunk(sentence))
 
-#returns continuous chunks of Named Entities
-def get_continuous_chunks(text):
-    chunked = ne_chunk(pos_tag(word_tokenize(text)))
-    prev = None
-    continuous_chunk = []
-    current_chunk = []
+def good_enough(sentence):
+    pronouns, nouns, named_entities = sentence[0]
+    return nouns > 2 and named_entities > 0 and pronouns < 1
 
-    for i in chunked:
-        if type(i) == Tree:
-            current_chunk.append(" ".join([token for token, pos in i.leaves()]))
-        elif current_chunk:
-            named_entity = " ".join(current_chunk)
-            if named_entity not in continuous_chunk:
-                continuous_chunk.append(named_entity)
-                current_chunk = []
-        else:
-            continue
-
-    return continuous_chunk
+def goodness(sentence):
+    pronouns, nouns, named_entities = sentence[0]
+    return float(5*named_entities + nouns - 10*pronouns)/float(len(sentence))
 
 #filter sentences for linking verbs, named entities etc.
 def filtered_sentences(article, debug=False):
+    #get sentences from the article
     sentences = nltk.sent_tokenize(article.strip())
+    #tokenize all of the sentences
+    sentences = [(nltk.word_tokenize(sentence), sentence) for sentence in sentences]
+    #throw out sentences with no linking verb
+    sentences = filter(short_enough, sentences)
+    sentences = filter(contains_linking, sentences)
+    #pos tag the remaining sentences
+    sentences = [sentence_to_features(sentence) for sentence in sentences]
+    filter(good_enough, sentences)
+    sorted(sentences, key=goodness)
+    return [sentence[1] for sentence in sentences]
 
-    #check for linking verbs
-    sentences = [sentence for sentence in sentences if contains_phrase(sentence)]
 
-    #check for nouns
-    sentences = [sentence for sentence in sentences if contains_noun(sentence)]
 
-    #remove sentences which are very large
-    sentences = [sentence for sentence in sentences if (len(nltk.word_tokenize(sentence)) < 15)]
+#def get_continuous_chunks(text):
+#    chunked = ne_chunk(pos_tag(word_tokenize(text)))
+#    prev = None
+#    continuous_chunk = []
+#    current_chunk = []
+#
+#    for i in chunked:
+#        if type(i) == Tree:
+#            current_chunk.append(" ".join([token for token, pos in i.leaves()]))
+#        elif current_chunk:
+#            named_entity = " ".join(current_chunk)
+#            if named_entity not in continuous_chunk:
+#                continuous_chunk.append(named_entity)
+#                current_chunk = []
+#        else:
+#            continue
+#
+#    return continuous_chunk
 
-    #sort by no. of named entities
-    sentences = sorted(sentences, key = lambda x : -len(get_continuous_chunks(x)))
 
-    return sentences

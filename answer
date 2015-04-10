@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+export NLTK_DATA="$PWD/dependencies/nltk-data:${NLTK_DATA}"
+source dependencies/venv/bin/activate
+arg1=$(readlink -f $1 2>/dev/null)
+arg2=$(readlink -f $2 2>/dev/null)
+cd src
+./answer.py $arg1 $arg2
