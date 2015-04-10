@@ -44,7 +44,7 @@ def original_text(sentence, tokens):
             continue
         regex_string += re.escape(token)
         if i != len(tokens) -1:
-            regex_string += '.*';
+            regex_string += '[^a-zA-Z0-9]*';
     #search for regex in original string
     match = re.search(regex_string, sentence)
     if match:
@@ -82,8 +82,11 @@ def question_part(sentence):
         return None
     np = f.tree[f.index]
     vp = f.tree[f.index+1]
-    return get_parts(np.leaves(), vp.leaves(), sentence, 1)
-
+    #print "NP: ", np.leaves()
+    #print "VP: ", vp.leaves()
+    yolo = get_parts(np.leaves(), vp.leaves(), sentence, 1)
+    #print yolo
+    return yolo
 
 def question_parts(ranked, debug=False):
     #for rank in ranked:
