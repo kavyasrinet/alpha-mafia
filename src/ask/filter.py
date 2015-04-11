@@ -8,7 +8,7 @@ import re
 
 MAX_LENGTH = 20
 #linking verbs
-verbs = [["are"], ["have"], ["is"], ["should"], ["was"], ["would"], ["were"]]
+verbs = [["are"],  ["is"], ["should"], ["was"], ["would"], ["were"]]
 
 #linking verbs of length == 2 words
 verb_phrases = [["are", "being"], ["had", "been"], ["has", "been"],
@@ -69,7 +69,7 @@ def filtered_sentences(article, debug=False):
     sentences = filter(contains_linking, sentences)
     #pos tag the remaining sentences
     sentences = [sentence_to_features(sentence) for sentence in sentences]
-    filter(good_enough, sentences)
+    #filter(good_enough, sentences)
     sorted(sentences, key=goodness)
     return [sentence[1] for sentence in sentences]
 
