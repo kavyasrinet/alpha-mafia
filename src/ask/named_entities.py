@@ -1,10 +1,15 @@
 import sys
+import common.stanford as stanford
 
 #returns 'Barack/PERSON' as ('Barack','PERSON') tuple
 def parse_ner(ner_tag):
 	tags = ner_tag.split('/')
 	return (tags[0],tags[1])
 #end def
+
+def ner(ner_text):
+    stanford.ner(ner_text)
+    return named_entities(ner_text)
 
 #returns the chunk of NERs from a line of output (from Stanford NER), as a list of tuples ('word', 'NER class')
 def named_entities(ner_text):
