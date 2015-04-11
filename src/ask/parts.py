@@ -62,24 +62,39 @@ def get_parts(np, vp, sentence, verb_length):
         return subject, verb, verb_object
     return None
 
-def get_verb(sentence):
-    return contains_linking(nltk.word_tokenize(sentence))
+def get_patterns(sentence):
+    sentence_object = (nltk.word_tokenize(sentence), sentence)
+    verb = contains_linking(sentence_object)
+    print verb
+    if len(verb) == 0:
+        return []
+    if len(verb) == 1:
+        p1 = 'NP $. (VP <, (/VB.?/ <, %s))'
+        p1 = p1 % verb[0]
+        return [p1]
+    else:
+        p1 = 'NP $. (VP < (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s))))'
+        p2 = 'NP $. (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s)))'
+        p1 = p1 % (verb[0],verb[1])
+        p2 = p2 % (verb[0],verb[1])
+        return [p1, p2]
+
 
 #should make sure things work
 def question_part(sentence):
-    verb = get_verb(sentence)
     parse = parser.raw_parse_sents([sentence]).next().next()
-    #call tregex
-    pattern = 'NP $. (VP <, (VBZ|VBD|VBP|VB <, is|are|was|were))'
-    #try to get the tree
-    output = stanford.tregex(str(parse), pattern, ['-x'])
-    #output = stanford.tregex(str(parse), pattern, [])
-    #print output
     f = None
-    try:
-        f = TreeFinder(parse, output)
-    except:
-        return None
+    for pattern in get_patterns(sentence):
+        #call tregex
+        output = stanford.tregex(str(parse), pattern, ['-x'])
+        try:
+            #try to get the tree
+            f = TreeFinder(parse, output)
+            break
+        except:
+            pass
+    #if we didn't find anything, abandon ship
+    if not f: return None
     np = f.tree[f.index]
     vp = f.tree[f.index+1]
     #print "NP: ", np.leaves()
