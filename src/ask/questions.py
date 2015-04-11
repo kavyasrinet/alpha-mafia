@@ -17,7 +17,10 @@ ner = {"ORGANIZATION":"what"}
 def gen_question(parts):
     return to_question(*parts)
 
-def to_question(subj, verb, verb_object):
+def wh_quest(subj, verb, obj):
+    pass
+
+def true_false(subj, verb, obj):
     split = subj.lower().split()
     first_word = split[0]
     #if the subject is only a pronoun, ask a question
@@ -67,7 +70,6 @@ def get_wh(wh,cls):
         return wh+" "+cls
     else:
         return wh
-
 
 
 if __name__ == '__main__':

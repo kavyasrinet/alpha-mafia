@@ -5,8 +5,9 @@ import common.stanford as stanford
 from nltk import ne_chunk, pos_tag, word_tokenize
 from nltk.tree import Tree
 import re
+from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
-MAX_LENGTH = 20
+MAX_LENGTH = 30
 #linking verbs
 verbs = [["are"],  ["is"], ["should"], ["was"], ["would"], ["were"]]
 
@@ -22,16 +23,17 @@ def is_sublist(lst, sublst):
     n = len(sublst)
     return any((sublst == lst[i:i+n]) for i in xrange(len(lst)-n+1))
 
-#checks if linking verbs are present
-def contains_linking(sentence):
+def all_linking(sentence):
     for verb in verbs:
         if is_sublist(sentence[0], verb):
-            return verb
+            yield verb
     for verb_phrase in verb_phrases:
         if is_sublist(sentence[0], verb_phrase):
-            return verb_phrase
-    return []
+            yield verb_phrase
 
+#checks if linking verbs are present
+def contains_linking(sentence):
+    return len(list(all_linking(sentence))) != 0
 
 def sentence_to_features(sentence):
     tags = nltk.pos_tag(sentence[0])
@@ -61,12 +63,15 @@ def goodness(sentence):
 #filter sentences for linking verbs, named entities etc.
 def filtered_sentences(article, debug=False):
     #get sentences from the article
-    sentences = nltk.sent_tokenize(article.strip())
+    punkt_param = PunktParameters()
+    punkt_param.abbrev_types = set(['dr', 'vs', 'mr', 'mrs', 'prof', 'inc', 'e.g', 'i.e'])
+    sentence_splitter = PunktSentenceTokenizer(punkt_param)
+    sentences = sentence_splitter.tokenize(article.strip())
     #tokenize all of the sentences
     sentences = [(nltk.word_tokenize(sentence), sentence) for sentence in sentences]
     #throw out sentences with no linking verb
     sentences = filter(short_enough, sentences)
-    sentences = filter(contains_linking, sentences)
+    sentences = filter(next(all_linking(sentence), None), sentences)
     #pos tag the remaining sentences
     sentences = [sentence_to_features(sentence) for sentence in sentences]
     #filter(good_enough, sentences)

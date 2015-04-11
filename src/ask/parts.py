@@ -3,7 +3,7 @@ import nltk
 import common.stanford as stanford
 from multiprocessing import Pool
 import settings
-from filter import contains_linking
+from filter import all_linking
 import re
 
 parser = stanford.Parser()
@@ -64,52 +64,54 @@ def get_parts(np, vp, sentence, verb_length):
 
 def get_patterns(sentence):
     sentence_object = (nltk.word_tokenize(sentence), sentence)
-    verb = contains_linking(sentence_object)
-    print verb
-    if len(verb) == 0:
-        return []
-    if len(verb) == 1:
-        p1 = 'NP $. (VP <, (/VB.?/ <, %s))'
-        p1 = p1 % verb[0]
-        return [p1]
-    else:
-        p1 = 'NP $. (VP < (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s))))'
-        p2 = 'NP $. (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s)))'
-        p1 = p1 % (verb[0],verb[1])
-        p2 = p2 % (verb[0],verb[1])
-        return [p1, p2]
+    for verb in all_linking(sentence_object):
+        if len(verb) == 1:
+            p1 = 'NP $. (VP <, (/VB.?/ <, %s))'
+            p2 = 'NP $. (VP <, (/MD.?/ <, %s))'
+            p1 = p1 % verb[0]
+            p2 = p2 % verb[0]
+            yield [p1, p2]
+        if len(verb) == 2:
+            p1 = 'NP $. (VP < (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s))))'
+            p2 = 'NP $. (VP <,(/VB.?/ <, %s) <2 (VP <, (/VB.?/ <, %s)))'
+            p1 = p1 % (verb[0],verb[1])
+            p2 = p2 % (verb[0],verb[1])
+            yield [p1, p2]
 
 
 #should make sure things work
 def question_part(sentence):
+    parts_list = []
     parse = parser.raw_parse_sents([sentence]).next().next()
-    f = None
-    for pattern in get_patterns(sentence):
-        #call tregex
-        output = stanford.tregex(str(parse), pattern, ['-x'])
-        try:
-            #try to get the tree
-            f = TreeFinder(parse, output)
-            break
-        except:
-            pass
-    #if we didn't find anything, abandon ship
-    if not f: return None
-    np = f.tree[f.index]
-    vp = f.tree[f.index+1]
-    #print "NP: ", np.leaves()
-    #print "VP: ", vp.leaves()
-    yolo = get_parts(np.leaves(), vp.leaves(), sentence, 1)
-    #print yolo
-    return yolo
+    for pattern_list in get_patterns(sentence):
+        f = None
+        for pattern in pattern_list:
+            #call tregex
+            output = stanford.tregex(str(parse), pattern, ['-x'])
+            try:
+                #try to get the tree
+                f = TreeFinder(parse, output)
+                break
+            except:
+                pass
+        #if we didn't find anything, abandon ship
+        if not f: continue
+        np = f.tree[f.index]
+        vp = f.tree[f.index+1]
+        #print "NP: ", np.leaves()
+        #print "VP: ", vp.leaves()
+        yolo = get_parts(np.leaves(), vp.leaves(), sentence, 1)
+        parts_list.append(yolo)
+    return parts_list
 
 def question_parts(ranked, debug=False):
     #for rank in ranked:
-    #    temp = question_part(rank)
-    #    if temp: yield temp
+    #    for parts in question_part(rank):
+    #        yield parts
     pool = Pool(settings.NUM_CORES)
-    for parts in pool.imap(question_part, ranked):
-        if parts: yield parts
+    for parts_list in pool.imap(question_part, ranked):
+        for parts in parts_list:
+            yield parts
 
 
 if __name__ == '__main__':
