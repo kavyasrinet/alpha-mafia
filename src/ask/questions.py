@@ -11,7 +11,10 @@ dets = ["this","that","these"]
 def gen_question(parts):
     return to_question(*parts)
 
-def to_question(subj, verb, verb_object):
+def wh_quest(subj, verb, obj):
+    pass
+
+def true_false(subj, verb, obj):
     split = subj.lower().split()
     first_word = split[0]
     #if the subject is only a pronoun, ask a question
@@ -30,6 +33,9 @@ def to_question(subj, verb, verb_object):
     if not det and not pronoun:
         return "%s %s %s?" % (verb.capitalize(), subj, verb_object)
     return None
+
+def to_question(subj, verb, verb_object):
+    return true_false(subj, verb, obj)
 
 if __name__ == '__main__':
     #unit testing
