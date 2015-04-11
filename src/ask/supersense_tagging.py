@@ -62,15 +62,40 @@ question_words['thing'] = 'What'
 question_words['process'] = 'What'
 question_words['abstraction'] = 'What'
 
-#returns question word and category (i.e. 2 return outputs)
+#returns question word and category as a tuple (i.e. 2 return outputs)
 def question_word(word):
 	word_class = object_class(word)
 
-	if(word_class in question_words):
-		return question_words[word_class], word_class
+	if word_class in question_words:
+		return (question_words[word_class], word_class)
 	#end if
 
-	return '',''
+	return ('','')
+#end def
+
+#returns a list of triples from the subject [(subject_part, question_word, word_class)]
+def subject_supersense(subject_text):
+	supersense_list = []
+
+	words = subject_text.split()
+	num_words = len(words)
+	subsets = []
+
+	#obtain different subsets of the subject
+	for i in range(1,num_words+1):
+		for j in range(num_words-i+1):
+			subsets.append('_'.join(words[j:j+i]))
+		#end for
+	#end for
+
+	for subset in subsets:
+		qw = question_word(subset)
+		if qw[0]:
+			supersense_list.append((subset.replace('_',' '), qw[0], qw[1]))
+		#end if
+	#end for
+
+	return supersense_list
 #end def
 
 #unit test
@@ -90,4 +115,7 @@ if __name__ == '__main__':
 
 	if question_word(word):
 		print word + ": " + question_word(word)[0] + " " + question_word(word)[1]
+	#end if
+
+	print subject_supersense(word)
 #end if
