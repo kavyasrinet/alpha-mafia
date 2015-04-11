@@ -8,8 +8,8 @@ def parse_ner(ner_tag):
 #end def
 
 def ner(ner_text):
-    stanford.ner(ner_text)
-    return named_entities(ner_text)
+    out = stanford.ner(ner_text)
+    return named_entities(out)
 
 #returns the chunk of NERs from a line of output (from Stanford NER), as a list of tuples ('word', 'NER class')
 def named_entities(ner_text):
