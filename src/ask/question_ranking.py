@@ -3,7 +3,7 @@ from nltk import word_tokenize
 from nltk import pos_tag
 
 #returns a list of features from the question text
-def question_features(question_text):
+def question_features(question_text, pronoun_or_noun = 0, num_ners = 0, subj_length = 0, obj_length = 0):
 	features = []
 
 	#find number of tokens in a question
@@ -30,7 +30,6 @@ def question_features(question_text):
 	features.extend((what_binary, which_binary, who_binary))
 
 	#add binary feature for pronoun or noun type question
-	pronoun_or_noun = 0 #zero for pronoun
 	features.append(pronoun_or_noun)
 
 	#add binary feature for negations
@@ -70,14 +69,10 @@ def question_features(question_text):
 	features.extend((det, nouns, verbs, adj, prp))
 
 	#add number of NERs as a feature
-	num_ners = 0
 	features.append(num_ners)
 
 	#lengths of subject and object phrase
-	subj_length = 0
-	obj_phrase = 0
-
-	features.extend((subj_length,obj_phrase))
+	features.extend((subj_length,obj_length))
 
 	return features
 #end def
