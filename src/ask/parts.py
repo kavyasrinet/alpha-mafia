@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 import nltk
-import common.stanford as stanford
-from multiprocessing import Pool
 import settings
 from filter import all_linking
+import common.stanford as stanford
 import re
-
-parser = stanford.Parser()
 
 class TreeFinder:
 
@@ -80,9 +77,8 @@ def get_patterns(sentence):
 
 
 #should make sure things work
-def question_part(sentence):
+def question_part(sentence, parse):
     parts_list = []
-    parse = parser.raw_parse_sents([sentence]).next().next()
     for pattern_list in get_patterns(sentence):
         f = None
         for pattern in pattern_list:
@@ -104,19 +100,15 @@ def question_part(sentence):
         parts_list.append(yolo)
     return parts_list
 
-def question_parts(ranked, debug=False):
-    #for rank in ranked:
-    #    for parts in question_part(rank):
-    #        yield parts
-    pool = Pool(settings.NUM_CORES)
-    for parts_list in pool.imap(question_part, ranked):
-        for parts in parts_list:
-            yield parts
+def question_parts(rank, debug=False):
+    sentence, parse = rank
+    output = []
+    for parts in question_part(sentence, parse):
+        output.append(parts)
+    return output
 
 
 if __name__ == '__main__':
     question = "Jane, the daughter of a magistrate, is coming to town next Saturday."
     original_text(question,['the','daughter','of'])
-    #print question_part(question)
-    #unit testing
     pass
