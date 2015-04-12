@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 import nltk
-import named_entities
+import named_entities as ne
 import os
 
-def cap_subj(subj):
+def cap_subj(subj, tags):
+    subj = subj.encode('utf-8')
     if not subj[0].isupper():
         return False
-    entities = named_entities.ner(subj)
+    entities = ne.named_entities(tags)
     if len(entities) == 0:
         return False
     return True
@@ -17,25 +18,25 @@ def decapitalize(subj):
 def space(obj):
     return obj[0].isalnum()
 
-def format_is(subj, verb, obj):
-    if not cap_subj(subj):
+def format_is(subj, verb, obj, tags):
+    if not cap_subj(subj, tags):
         subj = decapitalize(subj)
     if space(obj):
         obj = ' '+obj
     verb = verb.capitalize()
-    return "%s %s%s?" % (verb, subj, obj)
+    return ("%s %s%s?" % (verb, subj, obj),'is')
 
 def format_wh(wh, verb, obj):
     if space(obj):
         obj = ' '+obj
     wh = wh.capitalize()
-    return "%s %s%s?" % (wh, verb, obj)
+    return ("%s %s%s?" % (wh, verb, obj), 'wh')
 
 def format_wh_class(wh, clss, verb, obj):
     if space(obj):
         obj = ' '+obj
     wh = wh.capitalize()
-    return "%s %s %s%s?" % (wh, clss, verb, obj)
+    return ("%s %s %s%s?" % (wh, clss, verb, obj),'wh-class')
 
 if __name__ == '__main__':
     pass
