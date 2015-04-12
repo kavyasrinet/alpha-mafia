@@ -78,7 +78,6 @@ def get_patterns(sentence):
 
 #should make sure things work
 def question_part(sentence, parse):
-    parts_list = []
     for pattern_list in get_patterns(sentence):
         f = None
         for pattern in pattern_list:
@@ -96,9 +95,8 @@ def question_part(sentence, parse):
         vp = f.tree[f.index+1]
         #print "NP: ", np.leaves()
         #print "VP: ", vp.leaves()
-        yolo = get_parts(np.leaves(), vp.leaves(), sentence, 1)
-        parts_list.append(yolo)
-    return parts_list
+        parts = get_parts(np.leaves(), vp.leaves(), sentence, 1)
+        if parts: yield parts
 
 def question_parts(rank, debug=False):
     sentence, parse = rank
