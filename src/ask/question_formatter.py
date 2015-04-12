@@ -9,6 +9,7 @@ def cap_subj(subj):
     entities = named_entities.ner(subj)
     if len(entities) == 0:
         return False
+    return True
 
 def decapitalize(subj):
     return subj[:1].lower() + subj[1:] if subj else ''
