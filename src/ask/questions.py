@@ -20,7 +20,7 @@ def gen_question(parts):
 
 def determiner_question(first_word, rest, verb, obj, tag):
     question = det_map[first_word] + rest
-    return format_is(question.capitalize(), verb, obj, tag)
+    return format_wh(question.capitalize(), verb, obj)
 
 def get_wh(wh,cls):
     if wh == "Who":
