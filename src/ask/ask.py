@@ -20,7 +20,7 @@ def multi_parse(sentences):
     return out
 
 def stanford_ner(parts_list):
-    subjs = [parts[0].encode('utf-8') for parts in parts_list]
+    subjs = [parts[0].encode('utf-32') for parts in parts_list]
     output = stanford.ner(subjs).split('\n')
     print len(subjs)
     print len(output)

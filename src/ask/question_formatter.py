@@ -12,6 +12,8 @@ def cap_subj(subj, tags):
     entities = ne.named_entities(tags)
     if len(entities) == 0:
         return False
+    if nltk.word_tokenize(subj)[0] != entities[0][0]:
+        return False
     return True
 
 def decapitalize(subj):

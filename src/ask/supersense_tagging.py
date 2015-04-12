@@ -1,6 +1,7 @@
 import nltk
 from nltk.corpus import wordnet as wn
 import sys
+import codecs
 
 topics = ['person','city','language','constellation','musical_instrument','time_period']
 general_topics = ['whole','location','plant','animal','matter','thing','process','abstraction']
@@ -11,6 +12,7 @@ def object_class(word):
 	word = word.replace(' ','_')
 
 	#obtain all synsets
+        word.encode('utf-8','ignore')
 	word_synsets = wn.synsets(word)
 
 	if(word_synsets):
