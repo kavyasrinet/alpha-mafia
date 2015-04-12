@@ -1,6 +1,8 @@
-import sys
+import sys, os
 from nltk import word_tokenize
 from nltk import pos_tag
+import common.stanford as stanford
+from ask.named_entities import named_entities as ne
 
 #returns a list of features from the question text
 def question_features(question_text, pronoun_or_noun = 0, num_ners = 0, subj_length = 0, obj_length = 0):
@@ -77,6 +79,38 @@ def question_features(question_text, pronoun_or_noun = 0, num_ners = 0, subj_len
 	return features
 #end def
 
+#question_list is [((question_text, type),(subj, verb, obj))]
+def question_ranking(question_list):
+	features_list = []
+
+	all_questions = []
+	for question in question_list:
+		all_questions.append(question[0][0])
+	#end for
+
+	stanford_ner_output = stanford.ner(all_questions).split('\n')
+	ner_len_list = []
+	for output in stanford_ner_output:
+		ner_len_list.append(len(ne(output)))
+	#end for
+
+	ctr = 0
+	for question in question_list:
+		question_text = question[0][0]
+		question_type = question[0][1]
+
+		num_ners = ner_len_list[ctr]
+		ctr += 1
+
+		subj_length = len(word_tokenize(question[1][0]))
+		obj_length = len(word_tokenize(question[1][2]))
+
+		features_list.append(question_features(question_text,question_type,num_ners,subj_length,obj_length))
+	#end for
+
+	return features_list
+#end def
+
 #unit test
 if __name__ == '__main__':
 	if(len(sys.argv) < 2):
@@ -87,4 +121,7 @@ if __name__ == '__main__':
 	question_text = ' '.join(sys.argv[1:])
 
 	print question_features(question_text)
+
+	a = [(("Who is the President of the United States with Michelle Obama?",1),("Who","is","the President of the United States")),(("Is Evan typing?",1),("Evan","is","typing"))]
+	print question_ranking(a)
 #end if
