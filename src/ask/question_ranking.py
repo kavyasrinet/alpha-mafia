@@ -97,7 +97,8 @@ def question_ranking(question_list):
 	ctr = 0
 	for question in question_list:
 		question_text = question[0][0]
-		question_type = question[0][1]
+		#question_type = question[0][1]
+		question_type = 0
 
 		num_ners = ner_len_list[ctr]
 		ctr += 1
@@ -109,6 +110,33 @@ def question_ranking(question_list):
 	#end for
 
 	return features_list
+#end def
+
+def ranked_questions(question_list):
+	weight_vector = 1*[14]
+
+	features_list = question_ranking(question_list)
+	scores = []
+
+	for feature_vector in features_list:
+		scores.append(sum([a*b for a,b in zip(weight_vector,feature_vector)]))
+	#end for
+
+	ctr=0
+	ranked_questions_list = []
+	for question in question_list:
+		ranked_questions_list.append((question[0][0],scores[ctr]))
+		ctr += 1
+	#end for
+
+	ranked_questions_list.sort(key=lambda tup: tup[1])
+
+	sorted_questions_list = []
+	for question in ranked_questions_list:
+		sorted_questions_list.append(question[0])
+	#end for
+
+	return sorted_questions_list
 #end def
 
 #unit test
@@ -123,5 +151,5 @@ if __name__ == '__main__':
 	print question_features(question_text)
 
 	a = [(("Who is the President of the United States with Michelle Obama?",1),("Who","is","the President of the United States")),(("Is Evan typing?",1),("Evan","is","typing"))]
-	print question_ranking(a)
+	print ranked_questions(a)
 #end if
