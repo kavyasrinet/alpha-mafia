@@ -54,22 +54,20 @@ def get_questions(article, nquestions, debug=False):
     t3 = time.time()
     mod_list = stanford_ner(parts_list)
     t4 = time.time()
+    questions = [(gen_question(item), item) for item in mod_list]
+    questions = filter(lambda x: x[0], questions)
+    t5 = time.time()
+    ranked = rank_questions(questions)
+    t6 = time.time()
     print "filter",t1-t0
     print "parse",t2-t1
     print "parts",t3-t2
     print "mod",t4-t3
-    print mod_list
-    questions = [(gen_question(item), item) for item in mod_list]
-    questions = filter(lambda x: x[0], questions)
-    #ranked = rank_questions(questions)
-
-
-
-
-
-    ranked = rank_questions(questions)
-    if debug: print "### ranked ###"
-    return ranked[0:nquestions]
+    print "gen",t5-t4
+    print "rank",t6-t5
+    print ranked
+    return []
+    #return ranked[0:nquestions]
 
 if __name__ == '__main__':
     #unit testing

@@ -26,7 +26,8 @@ def tregex(tree, pattern, option=[]):
     return tregex_proc.communicate(str(tree))
 
 def ner(sentences):
-     #extend the argument with user specified options
+    
+    #extend the argument with user specified options
     args = [STANFORD_NER]
     #args.extend(option)
     #create a tregex process
