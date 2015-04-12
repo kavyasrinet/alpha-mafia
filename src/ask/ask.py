@@ -20,7 +20,7 @@ def multi_parse(sentences):
     return out
 
 def stanford_ner(parts_list):
-    subjs = [parts[0] for parts in parts_list]
+    subjs = [parts[0].encode('utf-8') for parts in parts_list]
     output = stanford.ner(subjs).split('\n')
     print len(subjs)
     print len(output)
@@ -57,6 +57,7 @@ def get_questions(article, nquestions, debug=False):
     questions = [(gen_question(item), item) for item in mod_list]
     questions = filter(lambda x: x[0], questions)
     t5 = time.time()
+    questions = [(sent, parts) for (sent,(parts,_)) in questions]
     ranked = ranked_questions(questions)
     t6 = time.time()
     print "filter",t1-t0
@@ -66,6 +67,9 @@ def get_questions(article, nquestions, debug=False):
     print "gen",t5-t4
     print "rank",t6-t5
     print ranked
+    if debug:
+        for rank in ranked:
+            print rank
     return ranked[0:nquestions]
 
 if __name__ == '__main__':
