@@ -2,7 +2,7 @@ import sys, os
 from nltk import word_tokenize
 from nltk import pos_tag
 import common.stanford as stanford
-from ask.named_entities import named_entities as ne
+from named_entities import named_entities as ne
 
 #returns a list of features from the question text
 def question_features(question_text, pronoun_or_noun = 0, num_ners = 0, subj_length = 0, obj_length = 0):

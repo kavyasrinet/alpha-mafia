@@ -6,7 +6,7 @@ from filter import filtered_sentences
 import settings
 from parts import question_parts
 from questions import gen_question
-from rank import rank_questions
+from question_ranking import ranked_questions
 from multiprocessing import Pool
 import time
 
@@ -57,7 +57,7 @@ def get_questions(article, nquestions, debug=False):
     questions = [(gen_question(item), item) for item in mod_list]
     questions = filter(lambda x: x[0], questions)
     t5 = time.time()
-    ranked = rank_questions(questions)
+    ranked = ranked_questions(questions)
     t6 = time.time()
     print "filter",t1-t0
     print "parse",t2-t1
@@ -66,8 +66,7 @@ def get_questions(article, nquestions, debug=False):
     print "gen",t5-t4
     print "rank",t6-t5
     print ranked
-    return []
-    #return ranked[0:nquestions]
+    return ranked[0:nquestions]
 
 if __name__ == '__main__':
     #unit testing

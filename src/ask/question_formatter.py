@@ -2,6 +2,8 @@
 import nltk
 import named_entities as ne
 import os
+import random
+import settings
 
 def cap_subj(subj, tags):
     subj = subj.encode('utf-8')
@@ -24,6 +26,8 @@ def format_is(subj, verb, obj, tags):
     if space(obj):
         obj = ' '+obj
     verb = verb.capitalize()
+    if random.random() < settings.PERCENT_NEGATED:
+        subj = subj + ' not'
     return ("%s %s%s?" % (verb, subj, obj),'is')
 
 def format_wh(wh, verb, obj):
