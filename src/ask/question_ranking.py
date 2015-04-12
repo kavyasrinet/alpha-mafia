@@ -85,7 +85,7 @@ def question_ranking(question_list):
 
 	all_questions = []
 	for question in question_list:
-		all_questions.append(question[0][0])
+		all_questions.append(question[0][0].encode('utf-8'))
 	#end for
 
 	stanford_ner_output = stanford.ner(all_questions).split('\n')
