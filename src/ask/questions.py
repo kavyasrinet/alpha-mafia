@@ -2,53 +2,65 @@
 import nltk
 import codecs, sys
 import common.stanford as stanford
-from named_entities import named_entities
+from named_entities import named_entities as ne
 from supersense_tagging import question_word
 from supersense_tagging import subject_supersense
+from question_formatter import *
 
 
 pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None,"there" : None}
 det_map = {"this": "what","that":"which","these":"which"}
 pronouns = ["it","he","she","they","there"]
 dets = ["this","that","these"]
-dont_discard_class = ["city","language"]
+dont_discard_class = ["city","language","constellation","musical_instrument"]
 ner = {"ORGANIZATION":"what"}
 
 def gen_question(parts):
-    return to_question(*parts)
+    if parts:
+        return to_question(*parts)
+    return None
 
 
 def determiner_question(first_word, rest, verb, obj):
     question = det_map[first_word] + rest
-    return "%s %s %s?" % (question.capitalize(), verb, obj)
+    return format_is(question.capitalize(), verb, obj)
+    #return "%s %s %s?" % (question.capitalize(), verb, obj)
 
 
 def get_wh(wh,cls):
+    if wh == "Who":
+        return None
     if cls in dont_discard_class:
         return wh+" "+cls
     else:
-        return wh
+        return None
 
 def supersense_question(subj, verb, obj):
     #rds, to create questions
     sup = subject_supersense(subj)
-    print sup
-    x = get_wh(sup[0][1], sup[0][2])
-    print x #return
+    if sup:
+        x = get_wh(sup[0][1], sup[0][2])
+        if x:
+            return format_wh(x,verb,obj)
+        return None
+    return None
 
 
 def named_entity_question(subj, verb, obj):
-    ners  = stanford.ner([subj])#named_entities(subj)
-    entities = named_entities(ners)
-    #print entities
+    subj = subj.encode('utf-8')
+    ners  = stanford.ner([subj])
+    entities = ne(ners)
     if entities:
         if entities[0][1]=="ORGANIZATION":
-            #return
-            print "What"
-            entity = entities[0][0]
-            sup = question_word(entity)
-            #return
-            print sup
+            return format_wh("What",verb,obj)
+        entity = entities[0][0]
+        sup = question_word(entity)
+        if sup[0] == "Who":
+            return None
+        else:
+            x = get_wh(sup[0],sup[1])
+            if x:
+                return format_wh_class(sup[0],sup[1],verb,obj)
     return None
 
 def true_false(subj, verb, obj):
@@ -56,14 +68,16 @@ def true_false(subj, verb, obj):
     pronoun = next((pronoun in subj.lower() for pronoun in pronouns),None)
     det = next((det in subj.lower() for det in dets),None)
     if not det and not pronoun:
-        return "%s %s %s?" % (verb.capitalize(), subj, obj)
+        return format_is(subj,verb.capitalize(), obj)
+        #return "%s %s %s?" % (verb.capitalize(), subj, obj)
     return None
 
 
 def pronoun_question(first_word, verb, obj):
     question = pronoun_map[first_word]
     if question:
-        return "%s %s %s?" % (question.capitalize(), verb, obj)
+        return format_wh(question.capitalize(),verb,obj)
+        #return "%s %s %s?" % (question.capitalize(), verb, obj)
 
 
 def to_question(subj, verb, obj):

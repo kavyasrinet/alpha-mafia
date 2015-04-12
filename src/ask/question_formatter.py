@@ -4,6 +4,7 @@ import named_entities
 import os
 
 def cap_subj(subj):
+    subj = subj.encode('utf-8')
     if not subj[0].isupper():
         return False
     entities = named_entities.ner(subj)
