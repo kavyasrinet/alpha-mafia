@@ -5,6 +5,14 @@ import os
 import random
 import settings
 
+def sanitize(obj,subj=None):
+    obj = obj.replace("also ","")
+    if not subj:
+        return obj
+    subj = subj.replace("also ","")
+    return obj, subj
+
+
 def cap_subj(subj, tags):
     subj = subj.encode('utf-8')
     if not subj[0].isupper():
@@ -12,6 +20,9 @@ def cap_subj(subj, tags):
     entities = ne.named_entities(tags)
     if len(entities) == 0:
         return False
+    if 'Moscow' in subj:
+        print nltk.word_tokenize(subj)[0]
+        print entities[0][0]
     if nltk.word_tokenize(subj)[0] != entities[0][0]:
         return False
     return True
@@ -23,6 +34,7 @@ def space(obj):
     return obj[0].isalnum()
 
 def format_is(subj, verb, obj, tags):
+    obj, subj = sanitize(obj, subj=subj)
     if not cap_subj(subj, tags):
         subj = decapitalize(subj)
     if space(obj):
@@ -33,12 +45,14 @@ def format_is(subj, verb, obj, tags):
     return ("%s %s%s?" % (verb, subj, obj),'is')
 
 def format_wh(wh, verb, obj):
+    obj = sanitize(obj)
     if space(obj):
         obj = ' '+obj
     wh = wh.capitalize()
     return ("%s %s%s?" % (wh, verb, obj), 'wh')
 
 def format_wh_class(wh, clss, verb, obj):
+    obj = sanitize(obj)
     if space(obj):
         obj = ' '+obj
     wh = wh.capitalize()
