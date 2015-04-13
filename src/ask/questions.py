@@ -11,32 +11,43 @@ pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None,"there" : Non
 det_map = {"this": "what","that":"which","these":"which"}
 pronouns = ["it","he","she","they","there"]
 dets = ["this","that","these"]
-dont_discard_class = ["city","language","constellation","musical_instrument"]
+
+plural_verbs = ["are","were","have"]
+good_classes = { "city":"cities",
+                 "language":"languages",
+                 "constellation":"constellations",
+                 "musical_instrument":"musical instruments"}
 ner = {"ORGANIZATION":"what"}
 
 def gen_question(parts):
     (subj, verb, obj), tag = parts
     return to_question(subj, verb, obj, tag)
+    #try:
+    #    return to_question(subj, verb, obj, tag)
+    #except:
+    #    return true_false(subj, verb, obj)
 
 def determiner_question(first_word, rest, verb, obj, tag):
     question = det_map[first_word] + rest
     return format_wh(question.capitalize(), verb, obj)
 
-def get_wh(wh,cls):
+def get_wh(wh,cls,verb):
     if wh == "Who":
-        return None
-    if cls in dont_discard_class:
-        return wh+" "+cls
+        return None, None
+    if cls not in good_classes:
+        return None, None
+    if verb in plural_verbs:
+        return wh, good_classes[cls]
     else:
-        return None
+        return wh, cls.replace("_"," ")
 
 def supersense_question(subj, verb, obj):
     #rds, to create questions
     sup = subject_supersense(subj)
     if sup:
-        x = get_wh(sup[0][1], sup[0][2])
-        if x:
-            return format_wh(x,verb,obj)
+        wh, cls = get_wh(sup[0][1], sup[0][2], verb)
+        if wh:
+            return format_wh_class(wh, cls, verb, obj)
         return None
     return None
 
@@ -48,12 +59,9 @@ def named_entity_question(subj, verb, obj, tag):
             return format_wh("What",verb,obj)
         entity = entities[0][0]
         sup = question_word(entity)
-        if sup[0] == "Who":
-            return None
-        else:
-            x = get_wh(sup[0],sup[1])
-            if x:
-                return format_wh_class(sup[0],sup[1],verb,obj)
+        wh, cls = get_wh(sup[0],sup[1],verb)
+        if wh:
+            return format_wh_class(wh, cls, verb, obj)
     return None
 
 def true_false(subj, verb, obj, tag):
