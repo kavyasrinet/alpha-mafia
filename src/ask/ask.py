@@ -12,6 +12,8 @@ import time
 import math
 from random import shuffle
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 parser = stanford.Parser()
 
 def multi_parse(sentences):
@@ -22,10 +24,8 @@ def multi_parse(sentences):
     return out
 
 def stanford_ner(parts_list):
-    subjs = [parts[0].replace('\n',' ').encode('utf-8',errors='ignore') for parts in parts_list]
+    subjs = [parts[0].replace('\n',' ').encode('utf-8') for parts in parts_list]
     output = stanford.ner(subjs).split('\n')
-    print len(subjs)
-    print len(output)
     parts_ner = []
     for i in xrange(len(parts_list)):
         parts_ner.append((parts_list[i],output[i]))
@@ -45,36 +45,16 @@ def stanford_parse(sentences, pool):
 
 def get_questions(article, nquestions, debug=False):
     pool = Pool(settings.NUM_CORES)
-    t0 = time.time()
     sentences = filtered_sentences(article, debug)
-    t1 = time.time()
     parses = stanford_parse(sentences, pool)
-    t2 = time.time()
     parts_list = []
     for partial in pool.imap(question_parts, parses):
         parts_list.extend(partial)
-    t3 = time.time()
     mod_list = stanford_ner(parts_list)
-    t4 = time.time()
     questions = [(gen_question(item), item) for item in mod_list]
     questions = filter(lambda x: x[0], questions)
-    t5 = time.time()
     questions = [(sent, parts) for (sent,(parts,_)) in questions]
     (wh_ranked, verb_ranked) = ranked_questions(questions)
-    t6 = time.time()
-    print "filter",t1-t0
-    print "parse",t2-t1
-    print "parts",t3-t2
-    print "mod",t4-t3
-    print "gen",t5-t4
-    print "rank",t6-t5
-    print wh_ranked
-    print verb_ranked
-    if debug:
-        for rank in wh_ranked:
-            print rank
-        for rank in verb_ranked:
-            print rank
     return shuffle_questions(wh_ranked, verb_ranked, nquestions)
 
 def shuffle_questions(wh_questions, verb_questions, nquestions):
