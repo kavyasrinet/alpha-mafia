@@ -2,4 +2,5 @@ dependencies/*
 !dependencies/requirements.txt
 *.pyc
 *.DS_Store
+bart_server.log
 alpha_mafia_server_pid
