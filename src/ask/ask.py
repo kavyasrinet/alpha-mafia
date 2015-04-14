@@ -106,6 +106,21 @@ def shuffle_questions(wh_questions, verb_questions, nquestions):
         wh_ctr += 1
     #end for
 
+    #if any category falls short of questions
+    if(len(questions) < nquestions):
+        num_questions = len(questions)
+
+        if verb_ctr < verb_num_questions:
+            for i in range(wh_ctr, len(wh_questions)):
+                questions.append(wh_questions[i])
+            #end for
+        else:
+            for i in range(verb_ctr, len(verb_questions)):
+                questions.append(verb_questions[i])
+            #end for
+        #end if
+    #end if
+
     shuffle(questions)
 
     return questions
