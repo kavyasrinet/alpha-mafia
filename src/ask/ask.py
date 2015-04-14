@@ -9,6 +9,8 @@ from questions import gen_question
 from question_ranking import ranked_questions
 from multiprocessing import Pool
 import time
+import math
+from random import shuffle
 
 parser = stanford.Parser()
 
@@ -58,7 +60,7 @@ def get_questions(article, nquestions, debug=False):
     questions = filter(lambda x: x[0], questions)
     t5 = time.time()
     questions = [(sent, parts) for (sent,(parts,_)) in questions]
-    ranked = ranked_questions(questions)
+    (wh_ranked, verb_ranked) = ranked_questions(questions)
     t6 = time.time()
     print "filter",t1-t0
     print "parse",t2-t1
@@ -66,11 +68,47 @@ def get_questions(article, nquestions, debug=False):
     print "mod",t4-t3
     print "gen",t5-t4
     print "rank",t6-t5
-    print ranked
+    print wh_ranked
+    print verb_ranked
     if debug:
-        for rank in ranked:
+        for rank in wh_ranked:
             print rank
-    return ranked[0:nquestions]
+        for rank in verb_ranked:
+            print rank
+    return shuffle_questions(wh_ranked, verb_ranked, nquestions)
+
+def shuffle_questions(wh_questions, verb_questions, nquestions):
+    questions = []
+
+    verb_num_questions = 0
+    wh_num_questions = 0
+
+    if(len(verb_questions) < len(wh_questions)):
+        verb_num_questions = int(math.floor(nquestions/2))
+        wh_num_questions = nquestions - verb_num_questions
+    else:
+        wh_num_questions = int(math.floor(nquestions/2))
+        verb_num_questions = nquestions - wh_num_questions
+
+    verb_ctr = 0
+    for question in verb_questions:
+        if (verb_ctr < verb_num_questions):
+            questions.append(question)
+        #end if
+        verb_ctr += 1
+    #end for
+
+    wh_ctr = 0
+    for question in wh_questions:
+        if(wh_ctr < wh_num_questions):
+            questions.append(question)
+        #end if
+        wh_ctr += 1
+    #end for
+
+    shuffle(questions)
+
+    return questions
 
 if __name__ == '__main__':
     #unit testing

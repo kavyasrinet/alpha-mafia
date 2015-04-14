@@ -1,0 +1,313 @@
+Which language is a West Germanic language that was first spoken in early medieval England and is now a global lingua franca?|23|0|1|0|0|0|2|7|4|4|0|2|1|19
+What is the third-most-common native language in the world, after Mandarin and Spanish?|15|1|0|0|0|0|2|4|1|2|0|1|1|12
+Which language was also influenced early on by the Old Norse language through Viking invasions in the 9th and 10th centuries?|22|0|1|0|0|0|2|7|2|3|0|1|2|18
+Is the Great Vowel Shift that began in the south of England in the 15th century one of the events that mark the emergence of Modern English?|28|0|0|0|0|0|5|11|2|1|0|3|15|11
+What is one of six official languages of the United Nations?|12|1|0|0|0|0|1|4|1|0|0|1|1|9
+Is one impact of the growth of English the reduction of native linguistic diversity in many parts of the world?|21|0|0|0|0|0|3|7|1|3|0|1|7|12
+Was one of these incoming Germanic tribes the Angles, whom Bede believed to have relocated entirely to Britain?|20|0|0|0|0|0|2|6|4|0|0|4|6|12
+Was old English later transformed by two waves of invasion?|11|0|0|0|0|0|0|4|2|1|0|1|2|7
+Was the second by speakers of the Romance language Old Norman in the 11th century with the Norman conquest of England?|22|0|0|0|0|0|4|9|0|3|0|3|2|18
+Is modern English the direct descendant of Middle English, itself a direct descendant of Old English, a descendant of the Proto-Germanic language?|25|0|0|0|0|0|4|8|2|4|1|4|2|21
+What is especially evident in the order and placement of verbs?|12|1|0|0|0|0|1|3|1|1|0|0|1|9
+Which language has been forming compound words and affixing existing words separately from the other Germanic languages for more than 1500 years but shows different patterns in this regard?|30|0|1|0|0|0|2|9|6|3|0|1|1|26
+What is, by international treaty, the official language for aeronautical and maritime communications?|16|1|0|0|0|0|1|5|1|2|0|0|1|13
+Which language is one of the official languages of the United Nations and many other international organisations, including the International Olympic Committee?|24|0|1|0|0|0|3|9|2|3|0|2|1|20
+Which language has been subject to a large degree of regional dialect variation for many centuries?|17|0|1|0|0|0|1|5|2|4|0|0|1|13
+Is latinate vocabulary not in general a later acquisition in children than the native Anglo-Saxon one?|17|0|0|0|0|1|2|3|1|5|0|1|2|12
+Is a version of the language almost universally agreed upon by educated English-speakers around the world called formal written English?|21|0|0|0|0|0|3|4|5|2|0|2|15|4
+Have artificially simplified versions of the language been created that are easier for non-native speakers to read?|18|0|0|0|0|0|1|4|5|2|0|0|6|10
+Which language is a controlled language originally developed for aerospace industry maintenance manuals?|14|0|1|0|0|0|1|6|2|1|0|0|2|10
+What is uncertain when English became stress-timed, but as most other surviving Germanic languages are it may date to before the break-up of proto-West Germanic?|27|1|0|0|0|0|1|4|6|6|1|3|1|24
+Is stress in English sometimes phonemic?|7|0|0|0|0|0|0|2|1|1|0|1|3|2
+Which language is moderately analytic?|6|0|1|0|0|0|0|1|1|1|0|0|2|2
+Is an English speaker in many cases able to choose between Germanic and Latinate synonyms: come or arrive; sight or vision; freedom or liberty?|28|0|0|0|0|0|1|10|2|4|0|2|3|23
+Are comparisons of the vocabulary size of English to that of other languages generally not taken very seriously by linguists and lexicographers?|23|0|0|0|0|1|2|7|1|2|0|1|12|9
+Have numerous sets of statistics been proposed to demonstrate the proportionate origins of English vocabulary?|16|0|0|0|0|0|1|5|4|2|0|1|4|10
+Which language were adopted during the 17th to 19th centuries, when French was the dominant language of Western international politics and trade?|24|0|1|0|0|0|2|5|3|5|0|2|3|20
+Have english-speaking children been found to take up to two years longer to learn to read than children in 12 other European countries?|24|0|0|0|0|0|0|5|5|4|0|1|2|20
+Are even these devices not used consistently?|8|0|0|0|0|1|1|2|1|0|0|0|3|3
+Which language is a constructed international auxiliary language?|9|0|1|0|0|0|1|2|2|2|0|0|11|5
+What is the most widely spoken constructed language in the world?|12|1|0|0|0|0|2|2|3|0|0|0|1|9
+Was zamenhof's goal to create an easy-to-learn, politically neutral language that would transcend nationality and foster peace and international understanding between people with different languages?|28|0|0|0|0|0|1|9|2|4|1|0|3|23
+Was the first World Congress of Esperanto organized in France in 1905?|13|0|0|0|0|0|1|5|1|1|0|2|6|5
+Which language is currently the language of instruction of the International Academy of Sciences in San Marino?|18|0|1|0|0|0|2|8|1|0|0|2|1|14
+Which language was created in the late 1870s and early 1880s by L. L. Zamenhof, a Polish-Jewish ophthalmologist from Białystok, then part of the Russian Empire?|29|0|1|0|0|0|3|7|2|4|0|4|1|25
+Were esperantists not killed during the Holocaust, with Zamenhof's family in particular singled out for murder?|19|0|0|0|0|1|1|4|3|1|1|2|1|15
+Was the use of Esperanto effectively banned until 1956?|10|0|0|0|0|0|1|3|1|0|0|1|4|4
+Which language is also the first language of teaching and administration of one university, the International Academy of Sciences San Marino?|23|0|1|0|0|0|2|10|1|1|0|1|1|19
+Are the phonology, grammar, vocabulary, and semantics based on the Indo-European languages spoken in Europe?|19|0|0|0|0|0|2|6|2|2|0|2|9|8
+Are new words formed through extensive prefixing and suffixing?|10|0|0|0|0|0|0|3|2|2|0|0|2|6
+Is tone not used to distinguish meanings of words?|10|0|0|0|0|1|0|2|4|0|0|0|1|7
+Which language is based on the Latin script, using a one-sound-one-letter principle?|14|0|1|0|0|0|2|4|3|1|0|1|3|10
+Are the accented letters a bit like h-digraphs in English?|11|0|0|0|0|0|2|5|0|1|0|1|3|6
+What was particularly true of the five letters with circumflexes, as they do not occur in any other language?|21|1|0|0|0|1|2|3|3|2|1|0|1|18
+Which language are derived by stringing together prefixes, roots, and suffixes?|14|0|1|0|0|0|0|4|3|0|0|0|2|10
+What process is regular, so that people can create new words as they speak and be understood?|19|1|0|0|0|0|0|3|5|2|1|0|2|15
+Are verbs not marked for person or number?|9|0|0|0|0|1|0|4|1|0|0|0|1|6
+Is word order comparatively free?|6|0|0|0|0|0|0|1|2|1|0|0|2|2
+Was the core vocabulary of Esperanto defined by Lingvo internacia, published by Zamenhof in 1887?|17|0|0|0|0|0|1|7|2|0|0|3|5|10
+Are words not also calqued?|6|0|0|0|0|1|0|2|1|0|0|0|1|2
+Are below listed some useful Esperanto words and phrases along with IPA transcriptions?|14|0|0|0|0|0|1|6|1|1|0|2|1|11
+Which language is by far the most widely spoken constructed language in the world?|15|0|1|0|0|0|2|3|3|0|0|0|1|11
+Are speakers most numerous in Europe and East Asia, especially in urban areas, where they often form Esperanto clubs?|22|0|0|0|0|0|0|9|1|1|1|3|1|19
+Is culbert's most detailed account of his methodology found in a 1989 letter to David Wolff?|18|0|0|0|0|0|1|5|3|2|2|1|8|8
+Has historically, much Esperanto music, such as Kaj Tiel Plu, been in various folk traditions?|19|0|0|0|0|0|0|7|2|2|0|2|11|5
+Have two full-length feature films been produced with dialogue entirely in Esperanto: Angoroj, in 1964, and Incubus, a 1965 B-movie horror film?|27|0|0|0|0|0|1|9|2|2|0|4|4|21
+Have other amateur productions been made, such as a dramatization of the novel Gerda Malaperis (Gerda Has Disappeared).?|23|0|0|0|0|0|2|12|2|2|0|2|3|18
+Which language is used as the universal language in the far future of Harry Harrison's Stainless Steel Rat and Deathworld stories?|23|0|1|0|0|0|2|12|2|0|1|0|1|19
+Which language is also found in the comic book series Saga as the language Blue, spoken by the inhabitants of Wreath?|23|0|1|0|0|0|3|8|3|1|0|3|1|19
+What is rendered in blue-colored text?|7|1|0|0|0|0|0|1|2|1|0|3|1|4
+Was a message in Esperanto not recorded and included in Voyager 1's Golden Record?|16|0|0|0|0|1|1|6|2|0|1|0|4|9
+Which language have been active for many years?|9|0|1|0|0|0|0|2|2|2|0|2|3|5
+Was zamenhof's intention to create an easy-to-learn language to foster international understanding?|14|0|0|0|0|0|1|4|2|2|1|0|3|9
+What was to serve as an international auxiliary language, that is, as a universal second language, not to replace ethnic languages?|25|1|0|0|0|1|2|5|4|3|0|0|1|22
+What goal was widely shared among Esperanto speakers in the early decades of the movement?|16|1|0|0|0|0|2|5|2|1|0|0|2|12
+What was proposed to Zamenhof by Irishman Richard Geoghegan, author of the first Esperanto textbook for English speakers, in 1887?|23|1|0|0|0|0|1|9|2|1|0|1|1|20
+Was the flag not approved in 1905 by delegates to the first conference of Esperantists at Boulogne-sur-Mer?|18|0|0|0|0|1|2|5|1|2|0|5|2|13
+Which language has been placed in many proposed political situations?|11|0|1|0|0|0|0|2|4|2|0|1|1|7
+Is the most popular of these the Europe – Democracy – Esperanto, which aims to establish Esperanto as the official language of the European Union?|27|0|0|0|0|0|5|10|2|2|0|0|5|20
+Was the first translation of the Bible into Esperanto a translation of the Tanakh or Old Testament done by L. L. Zamenhof?|23|0|0|0|0|0|4|12|0|1|0|5|8|13
+Which have been published in various separate booklets, or serialized in Dia Regno?|15|0|1|0|0|0|0|3|4|2|0|4|1|12
+Which language was conceived as a language of international communication, more precisely as a universal second language?|19|0|1|0|0|0|2|5|2|2|0|1|1|15
+Is the word not cold, lacking in associations?|10|0|0|0|0|1|1|2|2|1|0|0|2|5
+Were several later constructed languages, such as Universal, based on Esperanto?|14|0|0|0|0|0|0|3|1|4|0|0|8|3
+Which language is spoken by the Han majority and many other ethnic groups in China?|16|0|1|0|0|0|1|5|2|3|0|2|1|12
+Are most of these groups mutually unintelligible, although some, like Xiang and the Southwest Mandarin dialects, may share common terms and some degree of intelligibility?|29|0|0|0|0|0|4|8|2|2|0|2|4|23
+Are all varieties of Chinese tonal and analytic?|9|0|0|0|0|0|1|2|0|3|0|1|4|3
+Is standard Chinese (Putonghua/Guoyu/Huayu)  a standardized form of spoken Chinese based on the Beijing dialect of Mandarin?|20|0|0|0|0|0|2|6|3|3|0|4|5|13
+What is the official language of China and Taiwan, as well as one of four official languages of Singapore?|21|1|0|0|0|0|1|6|1|1|0|3|1|18
+What is one of the six official languages of the United Nations?|13|1|0|0|0|0|2|4|1|0|0|1|1|10
+Are the earliest examples of Chinese not divinatory inscriptions on oracle bones from around 1250 BCE in the late Shang dynasty?|22|0|0|0|0|1|2|8|0|4|0|3|5|14
+Was middle Chinese the language used during Southern and Northern Dynasties and the Sui, Tang, and Song dynasties (6th through 10th centuries CE).?|29|0|0|0|0|0|2|12|2|3|0|4|2|25
+Is the resulting system very complex, with a large number of consonants and vowels?|16|0|0|0|0|0|2|4|2|2|0|0|3|11
+Was the Zhongyuan Yinyun (1324)  a dictionary that codified the rhyming conventions of new sanqu verse form in this language?|23|0|0|0|0|0|4|10|0|3|0|0|6|15
+Is the national language now used in education, the media, and formal situations in both Mainland China and Taiwan?|22|0|0|0|0|0|3|7|2|2|0|1|3|17
+Which language was incorporated into the Han empire in 111 BCE, beginning a period of Chinese control that ran almost continuously for a millennium?|26|0|1|0|0|0|3|8|3|1|0|2|2|22
+Which language were also borrowed extensively into the Korean, Japanese and Vietnamese languages?|15|0|1|0|0|0|1|4|2|1|0|3|5|11
+Were many new compounds, or new meanings for old phrases, created in the late 19th and early 20th centuries to name Western concepts and artifacts?|28|0|0|0|0|0|1|7|2|6|0|3|10|15
+Is vietnamese written with a Latin-based alphabet?|8|0|0|0|0|0|1|1|2|2|0|1|1|5
+What is based on the Beijing dialect, which is the dialect of Mandarin as spoken in Beijing?|19|1|0|0|0|0|2|5|3|1|0|1|1|16
+Which language are morphemes independent of phonetic change?|9|0|1|0|0|0|0|3|1|2|0|2|2|5
+Are modern characters not styled after the regular script?|10|0|0|0|0|1|1|3|1|2|0|0|2|5
+Is romanization the process of transcribing a language into the Latin script?|13|0|0|0|0|0|3|5|2|0|0|0|1|10
+Which language is first known to have been written in Latin characters by Western Christian missionaries in the 16th century?|21|0|1|0|0|0|1|6|6|2|0|1|1|17
+Is pinyin not almost universally employed now for teaching standard spoken Chinese in schools and universities across America, Australia and Europe?|23|0|0|0|0|1|0|9|3|0|0|2|1|19
+Was the second-most common romanization system, the Wade–Giles, invented by Thomas Wade in 1859 and modified by Herbert Giles in 1892?|24|0|0|0|0|0|2|8|2|2|0|4|8|13
+Which language have been phonetically transcribed into many other writing systems over the centuries?|15|0|1|0|0|0|1|4|3|2|0|4|2|11
+Is the most widespread the Palladius system?|8|0|0|0|0|0|2|2|1|1|0|0|3|3
+Which language is strictly bound to a set number of syllables with a fairly rigid construction which are the morphemes, the smallest blocks of the language?|28|0|1|0|0|0|5|8|3|2|0|1|2|24
+Which language are formed out of native Chinese morphemes, including words describing imported objects and ideas?|18|0|1|0|0|0|0|5|5|2|0|0|3|14
+What is often done for commercial purposes, for example 奔腾／奔騰 bēnténg (lit?|15|1|0|0|0|0|0|4|2|2|0|1|1|12
+What is done by employing Chinese characters with similar pronunciations?|11|1|0|0|0|0|0|3|2|2|0|0|1|8
+Which language is particularly pronounced?|6|0|1|0|0|0|0|1|2|0|0|1|2|2
+Is another result of the English influence on Chinese the appearance in Modern Chinese texts of so-called 字母词／字母詞 zìmǔcí (lit?|22|0|0|0|0|0|3|10|1|2|0|0|8|12
+Were other terms coined by the Japanese by giving new senses to existing Chinese terms or by referring to expressions used in classical Chinese literature?|26|0|0|0|0|0|1|7|3|6|0|3|2|22
+Which language is a standardised and Sanskritised register of the Hindustani language?|13|0|1|0|0|0|2|5|2|0|0|2|16|9
+Is modern Standard Hindi one of the official languages of India?|12|0|0|0|0|0|1|5|2|0|0|2|3|7
+Is national-language status for Hindi a long-debated theme?|9|0|0|0|0|0|1|3|1|2|0|1|4|3
+Which language is written in Devanagari script (देवनागरी लिपि devanāgarī lipi) also called Nagari?|17|0|1|0|0|0|0|5|3|1|0|2|1|13
+Which language is marked by the influence of Bhakti movement and the composition of long, epic poems?|19|0|1|0|0|0|2|6|2|2|0|1|3|15
+What was primarily written in other varieties of Hindi, particularly Avadhi and Braj Bhasha, but also in Khariboli?|21|1|0|0|0|0|0|6|2|1|0|4|1|18
+What is known as Chhayavaad (shadowism) ?|9|1|0|0|0|0|0|3|2|0|0|0|1|6
+Which language is one of the seven languages of India that can be used to make web addresses.(URLs).?|23|0|1|0|0|0|1|8|4|0|0|1|1|20
+Is the following not a sample text in High Hindi, of the Article 1 of the Universal Declaration of Human Rights (by the United Nations):?|30|0|0|0|0|1|5|13|2|0|0|0|2|25
+Which language is a Romance language that originated in the Castile region of Spain?|15|0|1|0|0|0|2|6|2|0|0|3|15|11
+What was first documented in central-northern Iberia in the 9th century and gradually spread with the expansion of the Kingdom of Castile into central and southern Iberia?|28|1|0|0|0|0|3|6|3|5|0|3|1|25
+Which language is the official or national language of 19 countries in the Americas?|15|0|1|0|0|0|2|5|1|1|0|1|1|11
+Which language is the most popular second language learned by native speakers of American English?|16|0|1|0|0|0|1|5|2|3|0|1|1|12
+Have two etymologies for español been suggested?|8|0|0|0|0|0|0|2|2|1|0|0|4|2
+Are the first documents to record what is today regarded as the precursor of modern Spanish not from the 9th century (see Glosas Emilianenses).?|28|0|0|0|0|1|3|10|3|2|0|2|15|10
+Were many words borrowed from Latin through the influence of written language and the liturgical language of the Church?|20|0|0|0|0|0|3|6|2|2|0|0|2|16
+Which language is considered right-branching, meaning that subordinate or modifying constituents tend to be placed after their head words?|21|0|1|0|0|0|0|5|6|2|1|1|2|17
+Is subject/verb inversion not required in questions?|8|0|0|0|0|1|0|2|2|1|0|0|2|4
+Is the phoneme /ʃ/ in parentheses () to indicate that it appears only in loanwords?|17|0|0|0|0|0|1|3|3|0|1|1|3|12
+Which language is classified by its rhythm as a syllable-timed language, meaning that each syllable has approximately the same duration regardless of stress?|25|0|1|0|0|0|3|6|4|3|1|2|1|21
+Which language is the primary language of 20 countries worldwide?|11|0|1|0|0|0|1|3|1|1|0|0|1|7
+Which language is the third most spoken language by total number of speakers (after Mandarin and English).?|21|0|1|0|0|0|1|7|1|4|0|0|1|17
+Which language is also spoken by small communities in other European countries, such as the United Kingdom, France, and Germany?|24|0|1|0|0|0|1|7|2|4|0|1|1|20
+Which language is an official language of the European Union?|11|0|1|0|0|0|2|4|1|1|0|0|1|7
+Which language is co-official with English in Puerto Rico?|10|0|1|0|0|0|0|3|1|2|0|4|1|6
+Were population Hispanic or Hispanic American by origin?|9|0|0|0|0|0|0|4|1|0|0|1|1|6
+Which language is also used in administration in the state of New Mexico?|14|0|1|0|0|0|1|5|2|0|0|2|1|10
+Which language is present on Easter Island, as it was annexed as a Chilean province in 1888?|19|0|1|0|0|0|1|4|3|2|1|2|1|15
+Which language was an official language of the Philippines from the beginning of Spanish rule in 1565 to a constitutional change in 1973?|24|0|1|0|0|0|4|8|1|1|0|1|1|20
+Was the number of Chavacano-speakers estimated at 1.2 million in 1996?|12|0|0|0|0|0|1|3|1|0|0|2|4|6
+Were speakers of the Zamboangueño variety of Chavacano numbered about 360,000 in the 2000 census?|16|0|0|0|0|0|2|5|1|0|0|2|7|7
+Which language are present in the local languages of these territories as a legacy of colonial rule?|18|0|1|0|0|0|3|5|1|3|0|0|3|14
+Are the verb forms of general voseo the same as those used with tú except in the present tense (indicative and imperative) verbs?|26|0|0|0|0|0|4|8|1|5|0|2|6|18
+What usage is sometimes called ustedeo in Spanish?|9|1|0|0|0|0|0|3|2|0|0|0|2|5
+Is usted not also used in this way, as well as between parents and children, in the Andean regions of Ecuador, Colombia and Venezuela?|28|0|0|0|0|1|2|7|3|1|0|0|1|24
+Which language is closely related to the other West Iberian Romance languages, including Asturian, Aragonese, Galician, Ladino, Leonese, Mirandese and Portuguese?|28|0|1|0|0|0|1|10|3|3|0|1|1|24
+What is generally acknowledged that Portuguese speakers can understand Spanish with ease, but that Spanish speakers sometimes have difficulty understanding spoken Portuguese?|24|1|0|0|0|0|0|8|5|1|0|4|1|21
+Is the universal term for cheese in Romanian brânză (from unknown etymology).?|16|0|0|0|0|0|1|7|1|1|0|8|7|7
+Is a related dialect Haketia, the Judaeo-Spanish of northern Morocco?|12|0|0|0|0|0|2|3|1|3|0|4|3|7
+Which language are introduced with inverted question and exclamation marks (⟨¿⟩ and ⟨¡⟩, respectively).?|19|0|1|0|0|0|0|4|2|1|0|1|4|15
+Is the Association of Spanish Language Academies (Asociación de Academias de la Lengua Española, or ASALE)  the entity which regulates the Spanish language?|27|0|0|0|0|0|4|13|2|0|0|0|18|7
+Which language is the constructed language spoken by the fictional Klingons in the Star Trek universe?|17|0|1|0|0|0|3|6|3|1|0|2|11|13
+Was klingon subsequently developed by Okrand into a full-fledged language?|11|0|0|0|0|0|1|3|2|1|0|1|1|8
+Is the Klingon Christmas Carol play the first production that is primarily in Klingon (only the narrator speaks English).?|23|0|0|0|0|0|3|9|3|2|0|2|5|16
+Are a small number of people capable of conversing in Klingon?|12|0|0|0|0|0|1|5|0|2|0|0|5|5
+Were a small number of non-Klingon characters later depicted in Star Trek as having learned to speak Klingon, notably Jean-Luc Picard and Jadzia Dax?|26|0|0|0|0|0|1|8|4|4|0|0|6|18
+Are a small number of people not capable of conversing in Klingon?|13|0|0|0|0|1|1|5|0|2|0|5|5|5
+Which language is displayed in both Latin and pIqaD fonts, making this the first language course written in pIqaD and approved by CBS and Marc Okrand?|28|0|1|0|0|0|3|10|5|1|0|0|2|24
+Which language was first developed only for the purpose of being used in Star Trek?|16|0|1|0|0|0|1|4|4|1|0|3|3|12
+Was the performance proposed by Okrand in his capacity as chairman of the group's board?|17|0|0|0|0|0|2|7|1|0|2|1|2|13
+Is a cryptic message left by a serial killer in Klingon a plot point in the novel Watch Me by A. J. Holt?|24|0|0|0|0|0|4|12|1|2|0|1|10|12
+Are only words and grammatical forms introduced by Marc Okrand considered canonical Klingon by the KLI and most Klingonists?|20|0|0|0|0|0|1|7|3|3|0|2|9|9
+Has new vocabulary been collected in a list maintained by the KLI until 2005 and has since then been followed up by Klingon expert Lieven Litaer?|27|0|0|0|0|0|2|6|7|2|0|2|2|23
+Has klingon been developed with a phonology that, while based on human natural languages, is intended to sound alien to human ears?|25|0|0|0|0|0|1|3|9|3|0|2|1|22
+Is the effect mainly achieved by the use of a number of retroflex and uvular consonants in the language's inventory?|22|0|0|0|0|0|4|7|2|1|1|0|2|18
+Is klingon normally written in a variant of the Latin alphabet (see below).?|17|0|0|0|0|0|2|4|3|0|0|0|1|14
+Is the inventory of consonants in Klingon spread over a number of places of articulation?|16|0|0|0|0|0|2|7|1|0|0|1|6|8
+Is the combination of an aspirated voiceless alveolar plosive /tʰ/ and a voiced retroflex plosive /ɖ/ particularly unusual?|19|0|0|0|0|0|3|7|3|2|0|0|15|2
+Is klingon an agglutinative language, using mainly affixes in order to alter the function or meaning of words?|20|0|0|0|0|0|2|5|5|1|0|1|1|17
+Are verbs marked for aspect, certainty, predisposition and volition, dynamic, causative, mood, negation, and honorific?|23|0|0|0|0|0|0|8|1|3|0|4|1|20
+Are hyphens not used in Klingon?|7|0|0|0|0|1|0|3|1|0|0|0|1|4
+Is grammar abbreviated?|4|0|0|0|0|0|0|0|3|0|0|0|1|1
+Is a design principle of the Klingon language not the great degree of lexical-cultural correlation in the vocabulary?|19|0|0|0|0|1|4|6|1|3|0|0|7|9
+Are modern Romance languages not continuations of dialectal forms (vulgar Latin) of the language?|17|0|0|0|0|1|1|9|0|2|0|2|3|11
+Which language is still used in the creation of new words in modern languages of many different families, including English, and largely in biological taxonomy?|28|0|1|0|0|0|1|7|3|5|0|1|1|24
+Which language are the only surviving languages of the Italic language family?|13|0|1|0|0|0|2|5|2|1|0|1|6|9
+Which language has been passed down through various forms?|10|0|1|0|0|0|0|2|3|1|0|0|3|6
+Is the reading and interpretation of these inscriptions the subject matter of the field of epigraphy?|17|0|0|0|0|0|4|7|1|0|0|0|7|8
+Are about 270,000 inscriptions known?|6|0|0|0|0|0|0|2|1|0|0|0|3|1
+Which language has been significant at all stages of its insular development?|13|0|1|0|0|0|1|3|2|2|1|0|4|9
+Were many of these words used once by the author and then forgotten?|14|0|0|0|0|0|2|2|2|1|0|0|4|8
+Are many of the most common polysyllabic English words of Latin origin, through the medium of Old French?|20|0|0|0|0|0|2|7|0|4|0|3|8|10
+Have many international auxiliary languages been heavily influenced by Latin?|11|0|0|0|0|0|0|4|2|2|0|1|4|5
+Is interlingua, which lays claim to a sizable following, not sometimes considered a simplified, modern version of the language?|23|0|0|0|0|1|3|3|5|3|0|0|9|10
+Is latino sine Flexione, popular in the early 20th century, not Latin with its inflections stripped away, among other grammatical changes?|25|0|0|0|0|1|1|6|3|5|1|2|10|11
+Is instruction in Latin not an essential aspect of Classics?|11|0|0|0|0|1|1|4|1|1|0|1|3|5
+What book, first published in 1956, was written by Frederic M. Wheelock, who received a PhD from Harvard University?|23|1|0|0|0|0|1|7|4|1|0|2|7|13
+What is available at the Vatican, and at some institutions in the U.S., such as the University of Kentucky and Iowa State University?|26|1|0|0|0|0|4|8|1|2|0|4|1|23
+What was not until the Moorish conquest of Spain in 711 cut off communications between the major Romance regions that the languages began to diverge seriously?|27|1|0|0|0|1|3|7|3|2|0|3|1|24
+Is one way to determine whether a Romance language feature was in Vulgar Latin to compare it with its parallel in Classical Latin?|24|0|0|0|0|0|1|8|4|1|2|3|13|9
+Which language is the written Latin in use during that portion of the post-classical period when no corresponding Latin vernacular existed?|22|0|1|0|0|1|4|8|3|1|0|2|2|18
+Is the largest organization that retains Latin in official and quasi-official contexts the Catholic Church?|16|0|0|0|0|0|2|6|2|2|0|2|11|3
+Have some films of ancient settings, such as Sebastiane and The Passion of the Christ, been made with dialogue in Latin for the sake of realism?|29|0|0|0|0|0|4|9|2|3|0|3|15|11
+Is the libretto for the opera-oratorio Oedipus rex (opera) by Igor Stravinsky in Latin?|17|0|0|0|0|0|2|8|1|0|0|3|13|2
+Which language is taught in many high schools, especially in Europe and the Americas?|16|0|1|0|0|0|1|4|2|2|0|2|1|12
+Are the consonant phonemes of Classical Latin shown in the following table?|13|0|0|0|0|0|2|6|0|2|0|1|6|5
+Were most of the letterforms similar to modern uppercase, as can be seen in the inscription from the Colosseum shown at the top of the article?|28|0|0|0|0|0|5|6|2|3|0|1|4|22
+Are some notes concerning the mapping of Latin phonemes to English graphemes given below?|15|0|0|0|0|0|2|4|5|0|0|2|11|2
+Are doubled consonants in Latin pronounced long?|8|0|0|0|0|0|0|3|2|0|0|1|4|2
+Were long vowels in the Classical period not pronounced with a different quality from short vowels, as well as being longer?|23|0|0|0|0|1|2|4|3|3|0|1|6|14
+Is the difference not described in table below?|9|0|0|0|0|1|1|1|2|1|0|0|2|4
+Were the two most common⟨ae au⟩?|7|0|0|0|0|0|1|1|0|2|0|0|4|2
+Was ⟨oe⟩ not fairly rare?|6|0|0|0|0|1|0|2|0|1|0|0|1|2
+Which language was written in the Latin alphabet, derived from the Old Italic alphabet, which was in turn drawn from the Greek and ultimately the Phoenician alphabet?|30|0|1|0|0|0|4|10|5|0|0|4|1|26
+Was w created in the 11th century from VV?|10|0|0|0|0|0|1|3|2|1|0|0|1|7
+Is affixing not prefixing and suffixing?|7|0|0|0|0|1|0|0|4|0|0|0|1|3
+Which language are never prefixed?|6|0|1|0|0|1|0|1|2|0|0|0|2|2
+Is a major task in understanding Latin phrases and clauses not to clarify such ambiguities by an analysis of context?|21|0|0|0|0|1|2|8|2|2|0|1|9|9
+Are markers not also attached to fixed stems of verbs, to denote person, number, tense, voice, mood, and aspect—a process called conjugation?|29|0|0|0|0|1|0|12|4|0|0|0|1|25
+Are some words uninflected, not undergoing either process, such as adverbs, prepositions, and interjections?|19|0|0|0|0|1|2|6|2|1|0|0|2|15
+Are the declensions not identified by the genitive singular form of the noun?|14|0|0|0|0|1|3|5|1|1|0|0|2|9
+Are first and second declension adjectives declined like first declension nouns for the feminine forms and like second declension nouns for the masculine and neuter forms?|27|0|0|0|0|0|2|12|1|3|0|0|5|20
+Which are declined like regular first and second declension adjectives?|11|0|1|0|0|0|0|2|2|3|0|0|1|8
+Are third declension adjectives mostly declined like normal third declension nouns, with a few exceptions?|17|0|0|0|0|0|1|6|2|3|0|0|3|12
+Which language are formed from a verb?|8|0|1|0|0|0|1|2|2|0|0|0|6|4
+Are the conjugations not identified by the last letter of the verb's present stem?|16|0|0|0|0|1|3|6|1|1|1|0|2|11
+Is the first letter in each case the last of the stem, because of which the conjugations are also called the a-conjugation, e-conjugation and i-conjugation?|28|0|0|0|0|0|6|7|3|2|0|0|6|20
+Are lesser words stressed at the third to last syllable, called in Latin antepaenultimus or syllaba antepaenultima?|19|0|0|0|0|0|1|7|2|3|0|1|2|15
+Are the numbers 1, 2 and 3, and from 200 to 900, declined as nouns and adjectives with some differences?|24|0|0|0|0|0|2|5|1|0|0|0|13|8
+Is python a widely used general-purpose, high-level programming language?|11|0|0|0|0|0|1|2|2|3|0|0|1|8
+Are python interpreters available for installation on many operating systems, allowing Python code execution on a wide variety of systems?|22|0|0|0|0|0|1|10|2|3|0|1|2|18
+Is cPython managed by the non-profit Python Software Foundation?|10|0|0|0|0|0|1|4|2|1|0|1|1|7
+Are many other paradigms supported using extensions, including design by contract and logic programming?|16|0|0|0|0|0|0|7|3|2|0|0|3|11
+Is an important feature of Python not dynamic name resolution (late binding), which binds method and variable names during program execution?|25|0|0|0|0|1|1|9|2|4|0|0|5|17
+Is an important goal of the Python developers making Python fun to use?|14|0|0|0|0|0|2|5|3|1|0|2|7|5
+Is python intended to be a highly readable language?|10|0|0|0|0|0|1|1|4|1|0|0|1|7
+What is designed to have an uncluttered visual layout, frequently using English keywords where other languages use punctuation?|20|1|0|0|0|0|1|3|6|3|0|1|1|17
+Were old-style classes eliminated in Python 3.0, making all classes new-style?|13|0|0|0|0|0|1|3|2|2|0|0|2|9
+Is the standard library not essential to run Python or embed Python within an application?|16|0|0|0|0|1|2|4|3|2|0|2|3|11
+Is the main Python implementation, named CPython, not written in C meeting the C89 standard?|18|0|0|0|0|1|2|6|3|2|0|2|7|7
+Is cPython distributed with a large standard library written in a mixture of C and Python?|17|0|0|0|0|0|2|5|3|2|0|1|1|14
+What is available in versions for many platforms, including Microsoft Windows and most modern Unix-like systems?|18|1|0|0|0|0|0|5|2|5|0|2|1|15
+Was cPython intended from almost its very conception to be cross-platform?|12|0|0|0|0|0|0|3|2|1|1|0|1|9
+Is pyPy a fast, compliant interpreter of Python 2.7 and 3.2?|13|0|0|0|0|0|1|4|1|1|0|0|1|10
+Is a version taking advantage of multi-core processors using software transactional memory being created?|15|0|0|0|0|0|1|5|5|2|0|0|11|2
+Is a version taking advantage of multi-core processors using software transactional memory being created?|15|0|0|0|0|0|1|5|5|2|0|0|11|2
+Is stackless Python a significant fork of CPython that implements microthreads?|12|0|0|0|0|0|1|6|1|1|0|2|2|8
+What project has been kept up to date to run on all variants of the S60 platform?|18|1|0|0|0|0|2|5|4|0|0|0|2|14
+Is python's development conducted largely through the Python Enhancement Proposal (PEP) process?|16|0|0|0|0|0|1|8|3|0|1|1|3|11
+Is the mailing list python-dev the primary forum for discussion about the language's development?|16|0|0|0|0|0|3|7|1|1|1|0|4|10
+Is the major academic conference on Python named PyCon?|10|0|0|0|0|0|1|3|2|2|0|0|6|2
+Is most of the Sugar software for the One Laptop per Child XO, now developed at Sugar Labs, written in Python?|24|0|0|0|0|0|2|8|4|0|0|3|18|3
+Is python Scripting Provider a core feature since Version 4.0 from 7 February 2013?|15|0|0|0|0|0|1|6|2|0|0|1|3|10
+Is perl a family of high-level, general-purpose, interpreted, dynamic programming languages?|15|0|0|0|0|0|1|3|3|3|0|0|1|12
+Was perl originally developed by Larry Wall in 1987 as a general-purpose Unix scripting language to make report processing easier?|21|0|0|0|0|0|1|10|2|1|0|2|1|18
+Is the latest major stable revision of Perl 5 5.20.1, released in September 2014?|16|0|0|0|0|0|1|4|2|2|0|1|8|6
+Was the perl5-porters mailing list established in May 1994 to coordinate work on porting Perl 5 to different platforms?|20|0|0|0|0|0|1|8|3|1|0|1|4|14
+Was perl 5.000 released on October 17, 1994?|10|0|0|0|0|0|0|3|1|0|0|0|2|6
+Has perl 5 been in active development since then?|10|0|0|0|0|0|0|1|3|1|0|0|2|6
+Was perl 5.001 released on March 13, 1995?|10|0|0|0|0|0|0|3|1|0|0|0|2|6
+Was perl 5.002 not released on February 29, 1996 with the new prototypes feature?|16|0|0|0|0|1|1|4|2|1|0|0|2|11
+Was perl 5.003 released June 25, 1996, as a security release?|14|0|0|0|0|0|1|5|1|0|0|0|2|10
+Was another significant development the inclusion of the CGI.pm module, which contributed to Perl's popularity as a CGI scripting language?|23|0|0|0|0|0|4|9|1|2|1|2|3|18
+Was perl 5.005 released on July 22, 1998?|10|0|0|0|0|0|0|3|1|0|0|0|2|6
+Was perl 5.6 not released on March 22, 2000?|11|0|0|0|0|1|0|3|1|0|0|0|2|6
+What was the first concerted effort towards making Perl 6 a reality?|13|1|0|0|0|0|2|4|3|1|0|1|1|10
+Was version 5.12.4 released on June 20, 2011?|10|0|0|0|0|0|0|3|1|0|0|0|2|6
+Was the latest version of that branch, 5.12.5, released on November 10, 2012?|17|0|0|0|0|0|2|4|1|1|0|0|8|6
+Is jSON support not built-in as of 5.14.2?|9|0|0|0|0|1|0|2|1|1|0|0|2|4
+Was the latest version of that branch, 5.14.4, not released on March 10, 2013?|18|0|0|0|0|1|2|4|1|1|0|0|8|6
+What case distinction was subsequently documented as canonical?|9|1|0|0|0|0|0|2|2|1|0|0|3|4
+Have other expansions been suggested as equally canonical, including Wall's own humorous Pathologically Eclectic Rubbish Lister?|19|0|0|0|0|0|0|7|3|4|1|2|2|15
+Is the symbol a visual pun on pearl onion?|10|0|0|0|0|0|2|4|1|1|0|0|2|6
+Are all variables marked with leading sigils, which allow variables to be interpolated directly into strings?|18|0|0|0|0|0|1|5|5|0|0|0|2|14
+Was wall trained as a linguist?|7|0|0|0|0|0|1|2|2|0|0|0|1|4
+What is also an optional component of the popular LAMP technology stack for web development, in lieu of PHP or Python?|23|1|0|0|0|0|2|9|1|2|0|3|1|20
+Are operations on these structs defined by a large collection of macros, typedefs, and functions?|18|0|0|0|0|0|2|7|1|1|0|0|4|12
+Are the terms that indicate the kind of processing that is actually occurring at any moment compile time and run time?|22|0|0|0|0|0|3|8|4|0|0|0|15|5
+Is perl in compile time at most points during the compile phase?|13|0|0|0|0|0|1|4|2|2|0|0|1|10
+Is perl not distributed with over 250,000 functional tests for core Perl language and over 250,000 functional tests for core modules?|22|0|0|0|0|1|0|7|3|2|0|1|1|18
+Is perl dual licensed under both the Artistic License and the GNU General Public License?|16|0|0|0|0|0|3|6|3|1|0|2|1|13
+Are distributions available for most operating systems?|8|0|0|0|0|0|0|3|1|2|0|0|1|5
+What is particularly prevalent on Unix and Unix-like systems?|10|1|0|0|0|0|0|2|1|2|0|1|1|7
+Is cPAN also the source for publicly available Perl modules that are not part of the core Perl distribution?|20|0|0|0|0|1|2|8|2|1|0|2|1|17
+Is compiling Perl from source code under Windows possible?|10|0|0|0|0|0|0|4|2|1|0|2|7|1
+Is visual Perl an ActiveState tool which adds Perl to the Visual Studio .NET development suite?|17|0|0|0|0|0|2|8|2|2|0|3|2|13
+Is strawberry Perl an open source distribution for Windows?|10|0|0|0|0|0|1|4|1|2|0|0|2|6
+Is the Cygwin emulation layer another way of running Perl under Windows?|13|0|0|0|0|0|2|6|2|0|0|2|4|7
+Is a perl executable not included in several Windows Resource kits in the directory with other scripting tools?|19|0|0|0|0|1|2|5|4|3|0|3|3|13
+Is perl's performance in the benchmarks game typical for interpreted languages?|13|0|0|0|0|0|1|4|3|1|1|1|7|4
+Have a number of tools been introduced to improve this situation?|12|0|0|0|0|0|2|4|3|0|0|0|4|6
+Were proposals for new language features solicited from the Perl community at large, which submitted more than 300 RFCs?|21|0|0|0|0|0|1|6|2|2|0|0|5|14
+Is perl 6 not intended to be backward compatible, although there will be a compatibility mode?|18|0|0|0|0|1|1|2|5|1|0|1|2|14
+Are perl 6 and Perl 5 distinct languages with a common ancestry?|13|0|0|0|0|0|1|5|1|1|0|0|5|6
+Are perl 5 development versions released on a monthly basis, with major releases coming out once per year?|20|0|0|0|0|0|1|6|3|3|0|1|4|14
+Are some of the Acme modules deliberately implemented in amusing ways?|12|0|0|0|0|0|2|3|2|1|0|0|5|5
+Is java a functional computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible?|27|0|0|0|0|0|1|5|5|6|0|0|1|24
+Are java applications typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture?|23|0|0|0|0|0|1|8|4|1|0|2|2|19
+Which language was initially called Oak after an oak tree that stood outside Gosling's office?|17|0|1|0|0|0|1|7|3|0|1|2|2|13
+Was the Java 1.0 compiler re-written in Java by Arthur van Hoff to comply strictly with the Java 1.0 language specification?|22|0|0|0|0|0|2|10|0|0|0|4|4|16
+Was the desktop version renamed J2SE?|7|0|0|0|0|0|1|4|1|0|0|0|3|2
+What is achieved by compiling the Java language code to an intermediate representation called Java bytecode, instead of directly to architecture-specific machine code?|25|1|0|0|0|0|2|9|3|2|0|2|1|22
+Is java platform independent?|5|0|0|0|0|0|0|2|2|0|0|0|1|2
+Is oracle Corporation the current owner of the official implementation of the Java SE platform, following their acquisition of Sun Microsystems on January 27, 2010?|28|0|0|0|0|0|3|11|3|1|1|2|2|24
+What implementation is based on the original implementation of Java by Sun?|13|1|0|0|0|0|1|4|2|1|0|1|2|9
+Is the Oracle implementation available for Microsoft Windows, Mac OS X, Linux and Solaris?|17|0|0|0|0|0|1|9|1|1|0|5|3|12
+Is openJDK another notable Java SE implementation that is licensed under the GNU GPL?|15|0|0|0|0|0|2|6|3|1|0|2|1|12
+Is the goal of Java not to make all implementations of Java compatible?|14|0|0|0|0|1|1|4|2|1|1|2|4|7
+Is one of the ideas behind Java's automatic memory management model that programmers can be spared the burden of having to perform manual memory management?|27|0|0|0|0|0|2|10|4|2|1|1|11|14
+What was a conscious decision by Java's designers for performance reasons?|13|1|0|0|0|0|1|5|1|1|1|1|1|10
+Is the syntax of Java largely derived from C++?|10|0|0|0|0|0|1|3|2|0|0|1|4|4
+Is the name of the class file the name of the class, with .?|16|0|0|0|0|0|4|5|1|0|0|0|6|8
+What is simply the name of the method the Java launcher calls to pass control to the program?|19|1|0|0|0|0|4|6|3|0|0|0|1|16
+Is the String[] args parameter an array of String objects containing any arguments passed to the class?|20|0|0|0|0|0|4|9|4|0|0|1|6|12
+Are the parameters to main not often passed by means of a command line?|15|0|0|0|0|1|2|5|2|0|0|0|4|8
+Is printing part of a Java standard library?|9|0|0|0|0|0|1|3|2|1|0|0|1|6
+Are java applets programs that are embedded in other applications, typically in a Web page displayed in a web browser?|22|0|0|0|0|0|2|8|4|1|0|1|2|18
+Is the paintComponent() method passed a Graphics object that contains the graphic context used to display the applet?|21|0|0|0|0|0|4|8|5|1|0|1|5|14
+Is an applet placed in an HTML document using the <applet> HTML element?|16|0|0|0|0|0|3|7|3|0|0|1|2|12
+Is the paintComponent() method called by the AWT event dispatching thread whenever the display needs the applet to draw itself?|23|0|0|0|0|0|4|10|5|0|1|2|5|16
+Are servlets server-side Java EE components that generate responses (typically HTML pages) to requests (typically HTTP requests) from clients?|24|0|0|0|0|0|0|12|1|1|0|1|1|21
+Are javaServer Pages (JSP)  not server-side Java EE components that generate responses, typically HTML pages, to HTTP requests from clients?|25|0|0|0|0|1|0|15|1|1|0|1|5|17
+Is swing not a graphical user interface library for the Java SE platform?|14|0|0|0|0|1|2|6|2|1|0|3|1|10
+What is possible to specify a different look and feel through the pluggable look and feel system of Swing?|20|1|0|0|0|0|2|6|2|3|0|1|1|17
+Are clones of Windows, GTK+ and Motif supplied by Sun?|12|0|0|0|0|0|0|6|1|0|0|0|7|3
+Is the main() method called by the Java virtual machine when the program starts?|17|0|0|0|0|0|3|5|3|2|0|3|5|10
+Is the Java Class Library not the standard library, developed to support application development in Java?|18|0|0|0|0|1|2|7|3|1|0|1|4|11
+What is controlled by Sun Microsystems in cooperation with others through the Java Community Process program?|17|1|0|0|0|0|1|8|2|0|0|2|1|14
+What process has been a subject of controversy?|9|1|0|0|0|0|1|3|2|0|0|2|2|5

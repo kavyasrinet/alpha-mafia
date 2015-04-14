@@ -116,27 +116,69 @@ def ranked_questions(question_list):
 	weight_vector = [0.0433, 0.8499, 0.7612, 2.1735, 0, -0.2381, -0.0154, 0.002, -0.0716, 0.005, 0.0579, 0.032, -0.0102, -0.0245]
 
 	features_list = question_ranking(question_list)
-	scores = []
+	
+	wh_scores = []
+	verb_scores = []
 
-	for feature_vector in features_list:
-		scores.append(sum([a*b for a,b in zip(weight_vector,feature_vector)]))
+	wh_features = []
+	verb_features = []
+
+	question_text_list = []
+	for question in question_list:
+		question_text_list.append(question[0][0])
 	#end for
 
+	wh_questions = []
+	verb_questions = []
+
+	idx = 0
+	for features in features_list:
+		if (features[1] == 0 and features[2] == 0 and features[3] == 0):
+			verb_features.append(features)
+			verb_questions.append(question_text_list[idx])
+		else:
+			wh_features.append(features)
+			wh_questions.append(question_text_list[idx])
+		#end if
+		idx += 1
+	#end for
+
+	for feature_vector in wh_features:
+		wh_scores.append(sum([a*b for a,b in zip(weight_vector,feature_vector)]))
+	#end for	
+
+	for feature_vector in verb_features:
+		verb_scores.append(sum([a*b for a,b in zip(weight_vector,feature_vector)]))
+	#end for
+
+	wh_ranked_questions_list = []
+	verb_ranked_questions_list = []
+
 	ctr=0
-	ranked_questions_list = []
-	for question in question_list:
-		ranked_questions_list.append((question[0][0],scores[ctr]))
+	for question in wh_questions:
+		wh_ranked_questions_list.append((question,wh_scores[ctr]))
 		ctr += 1
 	#end for
 
-	ranked_questions_list.sort(key=lambda tup: tup[1])
+	ctr=0
+	for question in verb_questions:
+		verb_ranked_questions_list.append((question,verb_scores[ctr]))
+		ctr += 1
+	#end for	
 
-	sorted_questions_list = []
-	for question in ranked_questions_list:
-		sorted_questions_list.append(question[0])
+	wh_ranked_questions_list.sort(key=lambda tup: -tup[1])
+	verb_ranked_questions_list.sort(key=lambda tup: -tup[1])
+
+	wh_sorted_questions_list = []
+	verb_sorted_questions_list = []
+	for question in wh_ranked_questions_list:
+		wh_sorted_questions_list.append(question[0])
+	#end for
+	for question in verb_ranked_questions_list:
+		verb_sorted_questions_list.append(question[0])
 	#end for
 
-	return sorted_questions_list
+	return (wh_sorted_questions_list, verb_sorted_questions_list)
 #end def
 
 #unit test
@@ -150,6 +192,6 @@ if __name__ == '__main__':
 
 	print question_features(question_text)
 
-	a = [(("Who is the President of the United States with Michelle Obama?",1),("Who","is","the President of the United States")),(("Is Evan typing?",1),("Evan","is","typing"))]
+	a = [(("Who is the President of the United States with Michelle Obama?",1),("Who","is","the President of the United States")), (("Who is the President of the United States with Michelle Obama?",1),("Who","is","the President of the United States")), (("Is Evan typing?",1),("Evan","is","typing"))]
 	print ranked_questions(a)
 #end if
