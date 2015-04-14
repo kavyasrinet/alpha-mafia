@@ -3,6 +3,9 @@ import requests
 import sys
 import re
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 pronouns = ['he','she','it', 'they']
 SERVER_PORT='8125'
 SERVER_ADDRESS='http://localhost:%s/BARTDemo/ShowText/process/' % SERVER_PORT
@@ -65,9 +68,9 @@ def create_document(root, coref_map):
     return sentences
 
 def coref_server_request(p_text):
-    r = requests.post(SERVER_ADDRESS, data = p_text.encode('utf-8',errors='ignore'))
+    r = requests.post(SERVER_ADDRESS, data = p_text.encode('utf-8'))
     if (r.status_code, r.reason) == (200, 'OK'):
-        return r.text.encode('utf-8',errors='ignore')
+        return r.text.encode('utf-8')
     else:
         return None
 

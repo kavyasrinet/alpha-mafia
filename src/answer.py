@@ -4,6 +4,7 @@ import codecs
 from common.article import get_article
 from answer.answer import answer_all
 
+
 def usage():
     print "usage:"
     print ""
