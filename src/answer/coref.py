@@ -1,12 +1,14 @@
 import xml.etree.ElementTree as ET
 import requests
 import sys
+import re
 
 pronouns = ['he','she','it', 'they']
 SERVER_PORT='8125'
 SERVER_ADDRESS='http://localhost:%s/BARTDemo/ShowText/process/' % SERVER_PORT
 
-def coref_list(root):
+
+def coref_map_gen(root):
     coref_sets = {}
     sentence_count = 0
     for sen in root:
@@ -30,10 +32,23 @@ def coref_list(root):
     #end for
     return coref_sets, sentence_count
 
-def decide_replacement(text, coref):
+def coref_list(dom, coref_map):
+    temp = []
+    for item in dom:
+        if item.tag == 'w':
+            temp.append(item.text)
+        if item.tag == 'coref':
+            temp.extend(coref_list(item ,coref_map))
+    map_id = item.get('set_id')
+    if map_id not in coref_map:
+        return temp
+    coref = coref_map[map_id]
+    print "CONFLICT"
+    print temp
+    print coref[0]
     if len(text) ==  1 and text[0].lower() in pronouns:
         return coref[0]
-    return text
+    return temp
 
 def create_document(root, coref_map):
     sentences = []
@@ -43,12 +58,7 @@ def create_document(root, coref_map):
             if item.tag == 'w':
                 document.append(item.text)
             elif item.tag == 'coref':
-                temp = []
-                for w in item:
-                    temp.append(item.text)
-                coref = coref_map[item.get('set-id')]
-                replace = decide_replacement(temp, coref)
-                document.extend(replace)
+                document.extend(coref_list(item, coref_map))
         #end for
         sentences.append(document)
     #end for
@@ -61,6 +71,13 @@ def coref_server_request(p_text):
     else:
         return None
 
+def formatting(output_list):
+   out_string = ' '.join(output_list)
+   no_newline = out_string.replace('\n',' ')
+   sing_space = re.sub(r'(\s+)',r' ', no_newline)
+   punc_fixed = re.sub(r'\s([\.\,\?\!\:])',r'\g<1>', sing_space)
+   return punc_fixed
+
 def get_resolved_sentence(context):
     resp = coref_server_request(' '.join(context))
     if not resp: return context[-1]
@@ -69,12 +86,12 @@ def get_resolved_sentence(context):
         root = ET.fromstring(resp)
     except:
         return context[-1]
-    coref_map, sentences = coref_list(root)
+    coref_map, sentences = coref_map_gen(root)
     if sentences != len(context):
         #we disagree on the number of sentences
         return context[-1]
     doc = create_document(root, coref_map)
-    return ' '.join(doc[-1]).replace('\n',' ')
+    return formatting(doc[-1])
 
  #unit test
 if __name__ == '__main__':
@@ -86,7 +103,7 @@ if __name__ == '__main__':
     tree = ET.parse(sys.argv[1])
     root = tree.getroot()
 
-    print coref_list(root)
+    print coref_map_gen(root)
     server_input = 'Bill is the president of the club. He lives in Pittsburgh.'
 
     print coref_server_response(server_input)

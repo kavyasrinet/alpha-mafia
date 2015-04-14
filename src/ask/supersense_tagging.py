@@ -12,7 +12,7 @@ def object_class(word):
 	word = word.replace(' ','_')
 
 	#obtain all synsets
-        word.encode('utf-8','ignore')
+        word.encode('utf-8',errors='ignore')
 	word_synsets = wn.synsets(word)
 
 	if(word_synsets):
