@@ -2,7 +2,7 @@
 import nltk
 from tfidf import tfidf_list
 from nltk.stem.snowball import SnowballStemmer
-from Levenshtein import distance
+from coref import get_resolved_sentence
 
 stemmer = SnowballStemmer('english')
 
@@ -32,9 +32,13 @@ def answer(article, question):
     s, q = snowball_input(sentences, question)
     snowball = tfidf_list(sentences, s,q,snowball_count)
     index, snowball = max_sentence(snowball)
-    soi = sentences[index-4:index+4]
 
+    #this needs work before we use it
+    #context = get_context(index, sentences)
+    #answer = get_resolved_sentence(context)
+    #print answer.encode('utf-8',errors='ignore'), snowball[0].encode('utf-8',errors='ignore')
     return snowball[0]
+
 
 def answer_all(article, questions):
     return [answer(article, question) for question in questions]
