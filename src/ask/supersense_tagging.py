@@ -3,6 +3,9 @@ from nltk.corpus import wordnet as wn
 import sys
 import codecs
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 topics = ['person','city','language','constellation','musical_instrument','time_period']
 general_topics = ['whole','location','plant','animal','matter','thing','process','abstraction']
 
