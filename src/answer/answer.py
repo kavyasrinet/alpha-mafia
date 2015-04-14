@@ -3,10 +3,10 @@ import nltk
 from tfidf import tfidf_list
 from nltk.stem.snowball import SnowballStemmer
 from coref import get_resolved_sentence
-
+from coref import pronouns
 stemmer = SnowballStemmer('english')
 
-CONTEXT_LENGTH=4
+CONTEXT_LENGTH=6
 
 def snowball_input(sentences, question):
     sentences = [[stemmer.stem(word) for word in nltk.word_tokenize(sentence)] for sentence in sentences]
@@ -34,10 +34,16 @@ def answer(article, question):
     index, snowball = max_sentence(snowball)
 
     #this needs work before we use it
-    #context = get_context(index, sentences)
-    #answer = get_resolved_sentence(context)
-    #print answer.encode('utf-8',errors='ignore'), snowball[0].encode('utf-8',errors='ignore')
-    return snowball[0]
+    context = get_context(index, sentences)
+    resolve = False
+    for pronoun in pronouns:
+        if pronoun in nltk.word_tokenize(context[-1].lower()):
+            resolve = True
+    if resolve:
+        answer = get_resolved_sentence(context)
+    else:
+        answer = snowball[0]
+    return answer
 
 
 def answer_all(article, questions):
