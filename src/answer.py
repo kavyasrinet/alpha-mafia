@@ -29,7 +29,7 @@ def main():
         return
     article = get_article(article_html)
     questions = questions.splitlines()
-    questions = [question for question in questions if question.strip() == ""]
+    questions = [question for question in questions if question.strip() != ""]
     answers = answer_all(article, questions)
     for answer in answers:
         print answer.encode('utf-8')

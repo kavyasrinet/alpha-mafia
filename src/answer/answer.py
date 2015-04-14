@@ -1,45 +1,43 @@
 #!/usr/bin/env python
 import nltk
-from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import TfidfTransformer
-from nltk.stem.lancaster import LancasterStemmer
+from tfidf import tfidf_list
+from nltk.stem.snowball import SnowballStemmer
+from Levenshtein import distance
 
-def answer_all(article, questions):
-    return [answer(article, question)[0] for question in questions]
+stemmer = SnowballStemmer('english')
+
+CONTEXT_LENGTH=4
+
+def snowball_input(sentences, question):
+    sentences = [[stemmer.stem(word) for word in nltk.word_tokenize(sentence)] for sentence in sentences]
+    question = [stemmer.stem(word) for word in nltk.word_tokenize(question)]
+    return sentences, question
+
+def snowball_count(word, sentence):
+    if word in sentence:
+        return 1
+    return 0
+
+def max_sentence(sentences):
+    answer = max(enumerate(sentences), key=lambda x: sum(x[1][1]))
+    return answer
+
+def get_context(index, sentences):
+    begin = max(index-CONTEXT_LENGTH, 0)
+    return sentences[begin:index+1]
 
 def answer(article, question):
-    st = LancasterStemmer()
-    def stemmed_sentence(sentence):
-        tokens = nltk.word_tokenize(sentence)
-        return [st.stem(token) for token in  tokens]
-
-    stop_words = set(stopwords.words('english'))
-
     sentences = nltk.sent_tokenize(article.strip())
-    tokenized_sentences = [stemmed_sentence(sentence) for sentence in sentences]
 
-    question_words = set(stemmed_sentence(question)) - stop_words
-    question_dict = dict([(y, x) for (x, y) in enumerate(question_words)])
+    s, q = snowball_input(sentences, question)
+    snowball = tfidf_list(sentences, s,q,snowball_count)
+    index, snowball = max_sentence(snowball)
+    soi = sentences[index-4:index+4]
 
-    sentence_vectors = []
-    for sentence_tokens in tokenized_sentences:
-        sentence_vector = [0]*len(question_dict)
-        for word in sentence_tokens:
-            if word in question_dict:
-                sentence_vector[question_dict[word]] = 1
-        sentence_vectors.append(sentence_vector)
+    return snowball[0]
 
-    transformer = TfidfTransformer(norm = None, sublinear_tf = True)
-    tfidf = transformer.fit_transform(sentence_vectors)
-
-
-    tfidf_array = tfidf.toarray()
-
-    max_value = max(tfidf_array, key=lambda row: row.sum()).sum()
-    row_indexes = [i for (i,v) in enumerate(tfidf_array) if v.sum() == max_value]
-
-    return [sentences[index] for index in row_indexes];
-
+def answer_all(article, questions):
+    return [answer(article, question) for question in questions]
 
 if __name__ == '__main__':
     #unit testing

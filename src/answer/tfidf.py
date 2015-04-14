@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from nltk.stem.lancaster import LancasterStemmer
 
 
-def tfidf_list(question, sentences, count):
+def tfidf_list(original, sentences, question, count):
     n = len(sentences)
     m = len(question)
     feature_matrix = np.zeros((n, m))
@@ -15,7 +15,7 @@ def tfidf_list(question, sentences, count):
             feature_matrix[i][j] = count(word, sentence)
     transformer = TfidfTransformer(norm=None, sublinear_tf=True, use_idf=True, smooth_idf=True)
     tfidf = transformer.fit_transform(feature_matrix).toarray()
-    sentence_scores = zip(sentences, tfidf)
+    sentence_scores = zip(original, tfidf)
     return sentence_scores
 
 
