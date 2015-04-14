@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-server_file='alpha_mafia_server_pid'
+server_file='.alpha_mafia_server_pid'
 
 function ensure_server {
     should_start=0
