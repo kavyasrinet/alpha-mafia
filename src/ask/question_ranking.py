@@ -113,7 +113,7 @@ def question_ranking(question_list):
 #end def
 
 def ranked_questions(question_list):
-	weight_vector = 1*[14]
+	weight_vector = [0.0433, 0.8499, 0.7612, 2.1735, 0, -0.2381, -0.0154, 0.002, -0.0716, 0.005, 0.0579, 0.032, -0.0102, -0.0245]
 
 	features_list = question_ranking(question_list)
 	scores = []
