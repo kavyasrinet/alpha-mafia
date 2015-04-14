@@ -8,7 +8,7 @@ from supersense_tagging import subject_supersense
 from question_formatter import *
 
 pronoun_map = {"he" : "who", "she": "who", "it":"what","they":None,"there" : None}
-det_map = {"this": "what","that":"which","these":"which"}
+det_map = {"this": "what","that":"what","these":"what"}
 pronouns = ["it","he","she","they","there"]
 dets = ["this","that","these"]
 
