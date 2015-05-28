@@ -16,7 +16,7 @@ Scripts:
 Our scripts are called ask and answer, and are used accordingly
 
     Usage:
-    
+
     ./ask article.txt nquestions
         article.txt - the article to ask questions about
         nquestions  - the number of questions to ask
@@ -28,4 +28,10 @@ Our scripts are called ask and answer, and are used accordingly
 When you have finished with our system, please remmeber to kill the BART server by running (the server is started automatically by the answer script)
 
     ./kill_server
+
+Video
+---
+
+You can watch our final project video [here](https://www.youtube.com/watch?v=XuSXabda8uM)
+
 
