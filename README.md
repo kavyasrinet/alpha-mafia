@@ -1,6 +1,5 @@
 # alpha-mafia
-There are some mafias which are considered followers. Our mafia does not count itself among those. Our mafia is a leader! Or perhaps our mafia consists only of the Greek letter alpha. Who knows?
-
+A Question Answering System that can generate coherent questions from Wikipedia articles and answer questions about an article. We used various NLP libraries off the shelf for this.
 
 Dependenices:
 ---
